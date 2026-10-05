@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">GotYA 콘텐츠 데이터 모델</title>
+  <desc id="desc">공통 콘텐츠 모델에서 영화, 도서, 문화생활 상세 테이블과 추천, 사용자 상호작용으로 확장되는 구조</desc>
+  <rect width="1280" height="720" rx="34" fill="#f7fbff"/>
+  <text x="86" y="96" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="34" font-weight="800" fill="#142033">GotYA · 콘텐츠 추천 데이터 구조</text>
+  <text x="86" y="140" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="20" font-weight="500" fill="#5d687a">콘텐츠 유형은 달라도 추천, 찜, 좋아요, 후기는 같은 ContentItem 기준으로 처리했습니다.</text>
+  <g font-family="IBM Plex Sans KR, Arial, sans-serif">
+    <rect x="470" y="250" width="340" height="150" rx="28" fill="#ffffff" stroke="#b9d4ea" stroke-width="2"/>
+    <text x="538" y="315" font-size="30" font-weight="800" fill="#1f8d9b">ContentItem</text>
+    <text x="538" y="356" font-size="18" fill="#5d687a">title · thumbnail · type · score</text>
+    <rect x="96" y="246" width="240" height="110" rx="24" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
+    <text x="156" y="313" font-size="24" font-weight="800" fill="#142033">TasteResult</text>
+    <rect x="944" y="214" width="240" height="94" rx="22" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
+    <text x="1020" y="273" font-size="23" font-weight="800" fill="#142033">Movie</text>
+    <rect x="944" y="336" width="240" height="94" rx="22" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
+    <text x="1028" y="395" font-size="23" font-weight="800" fill="#142033">Book</text>
+    <rect x="944" y="458" width="240" height="94" rx="22" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
+    <text x="1012" y="517" font-size="23" font-weight="800" fill="#142033">Culture</text>
+    <rect x="470" y="506" width="340" height="98" rx="24" fill="#e8faf8" stroke="#bce2df" stroke-width="2"/>
+    <text x="540" y="566" font-size="24" font-weight="800" fill="#178f80">Recommendation</text>
+    <rect x="96" y="464" width="240" height="110" rx="24" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
+    <text x="144" y="531" font-size="24" font-weight="800" fill="#142033">User Action</text>
+    <path d="M336 301h112" stroke="#37b8ad" stroke-width="5" stroke-linecap="round"/>
+    <path d="m432 283 24 18-24 18" fill="none" stroke="#37b8ad" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M810 325h106" stroke="#37b8ad" stroke-width="5" stroke-linecap="round"/>
+    <path d="m900 307 24 18-24 18" fill="none" stroke="#37b8ad" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M810 348c58 0 64 35 106 35" stroke="#37b8ad" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M810 372c80 0 62 132 106 132" stroke="#37b8ad" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M216 464c0-96 150-117 252-117" stroke="#37b8ad" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M640 400v82" stroke="#37b8ad" stroke-width="5" stroke-linecap="round"/>
+    <path d="m622 466 18 24 18-24" fill="none" stroke="#37b8ad" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

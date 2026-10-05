@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">잇담 저장 상태 구조</title>
+  <desc id="desc">작성 입력, 저장 중 상태, 대기 초안, 서버 반영 결과를 분리한 상태 흐름</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbf8ff"/>
+      <stop offset="1" stop-color="#f2f0ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#6750a4" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" rx="34" fill="url(#bg)"/>
+  <text x="86" y="96" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="34" font-weight="800" fill="#332a46">잇담 · 문장 저장 상태 구조</text>
+  <text x="86" y="140" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="20" font-weight="500" fill="#6b6478">자동 저장과 수동 저장이 겹쳐도 마지막 입력을 잃지 않도록 상태를 분리했습니다.</text>
+  <g filter="url(#shadow)" font-family="IBM Plex Sans KR, Arial, sans-serif">
+    <rect x="86" y="232" width="210" height="138" rx="24" fill="#ffffff" stroke="#d8d0ea"/>
+    <text x="126" y="286" font-size="23" font-weight="800" fill="#4c2eb8">draftInput</text>
+    <text x="126" y="324" font-size="17" fill="#6b6478">사용자가 지금 쓰는</text>
+    <text x="126" y="350" font-size="17" fill="#6b6478">문장 입력값</text>
+    <path d="M314 301h108" stroke="#8a6cff" stroke-width="5" stroke-linecap="round"/>
+    <path d="m407 283 26 18-26 18" fill="none" stroke="#8a6cff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="452" y="232" width="210" height="138" rx="24" fill="#ffffff" stroke="#d8d0ea"/>
+    <text x="492" y="286" font-size="23" font-weight="800" fill="#4c2eb8">isSaving</text>
+    <text x="492" y="324" font-size="17" fill="#6b6478">현재 저장 요청이</text>
+    <text x="492" y="350" font-size="17" fill="#6b6478">진행 중인지 판단</text>
+    <path d="M680 301h108" stroke="#8a6cff" stroke-width="5" stroke-linecap="round"/>
+    <path d="m773 283 26 18-26 18" fill="none" stroke="#8a6cff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="818" y="232" width="210" height="138" rx="24" fill="#ffffff" stroke="#d8d0ea"/>
+    <text x="858" y="286" font-size="23" font-weight="800" fill="#4c2eb8">pendingDraft</text>
+    <text x="858" y="324" font-size="17" fill="#6b6478">저장 중 들어온</text>
+    <text x="858" y="350" font-size="17" fill="#6b6478">최신 입력 보관</text>
+    <path d="M1046 301h108" stroke="#8a6cff" stroke-width="5" stroke-linecap="round"/>
+    <path d="m1139 283 26 18-26 18" fill="none" stroke="#8a6cff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="86" y="462" width="210" height="138" rx="24" fill="#ffffff" stroke="#d8d0ea"/>
+    <text x="126" y="516" font-size="23" font-weight="800" fill="#4c2eb8">savedVersion</text>
+    <text x="126" y="554" font-size="17" fill="#6b6478">서버에 확정된</text>
+    <text x="126" y="580" font-size="17" fill="#6b6478">문장 버전</text>
+    <rect x="452" y="462" width="210" height="138" rx="24" fill="#ffffff" stroke="#d8d0ea"/>
+    <text x="492" y="516" font-size="23" font-weight="800" fill="#4c2eb8">AI Review</text>
+    <text x="492" y="554" font-size="17" fill="#6b6478">평가 결과와</text>
+    <text x="492" y="580" font-size="17" fill="#6b6478">레이드 참여 조건</text>
+    <rect x="818" y="462" width="210" height="138" rx="24" fill="#ffffff" stroke="#d8d0ea"/>
+    <text x="858" y="516" font-size="23" font-weight="800" fill="#4c2eb8">Library</text>
+    <text x="858" y="554" font-size="17" fill="#6b6478">개인 책·공동 책·</text>
+    <text x="858" y="580" font-size="17" fill="#6b6478">보관함으로 연결</text>
+    <path d="M1166 301c54 0 70 230-120 230" stroke="#8a6cff" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M296 531h138" stroke="#8a6cff" stroke-width="5" stroke-linecap="round"/>
+    <path d="m419 513 26 18-26 18" fill="none" stroke="#8a6cff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M662 531h138" stroke="#8a6cff" stroke-width="5" stroke-linecap="round"/>
+    <path d="m785 513 26 18-26 18" fill="none" stroke="#8a6cff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
