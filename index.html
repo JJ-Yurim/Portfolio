@@ -8,13 +8,28 @@
       name="description"
       content="고객의 불편을 직접 마주한 최전선 개발자 정유림의 포트폴리오"
     />
+    <link rel="canonical" href="https://jj-yurim.github.io/Portfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="정유림 포트폴리오 | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="사용자 흐름과 데이터 구조를 함께 설계하는 프론트엔드 개발자 정유림의 포트폴리오"
+    />
+    <meta property="og:url" content="https://jj-yurim.github.io/Portfolio/" />
+    <meta
+      property="og:image"
+      content="https://jj-yurim.github.io/Portfolio/assets/captures/portfolio-project-list-check-2.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261006-12" />
+    <link rel="stylesheet" href="styles.css?v=20261006-15" />
   </head>
   <body>
     <header class="site-header">
@@ -85,7 +100,7 @@
         <div class="archive-grid reveal">
           <a class="archive-card" href="https://github.com/JJ-Yurim" target="_blank" rel="noreferrer">
             <span>GitHub</span><strong>github.com/JJ-Yurim</strong>
-            <p>프로젝트 소스코드, README, 실행 방법, 구현 기록을 정리했습니다.</p>
+            <p>프로젝트 소스코드, README, 실행 방법을 정리한 공개용 스냅샷입니다. 원본 협업 이력은 GitLab에 있습니다.</p>
           </a>
           <button class="archive-card" type="button" onclick="copyEmail()">
             <span>Email</span><strong>dbfan98@naver.com</strong>
@@ -104,10 +119,11 @@
         </div>
         <div class="project-list reveal">
           <button class="project-tile" type="button" data-project="itdam" aria-label="잇담 프로젝트 자세히 보기">
-            <img src="assets/captures/itdam-home.png" alt="잇담 홈 화면" />
+            <img src="assets/captures/itdam-drive-library.png" alt="잇담 도서관의 공동 책 목록 화면" loading="lazy" decoding="async" />
             <span class="tile-badge">Main Project</span>
             <strong>잇담</strong>
             <p>매일 다섯 단어로 문장을 쓰고 AI 평가로 보스 레이드에 도전하는 창작 게임 서비스</p>
+            <span class="tile-outcome">19+ 화면 · 28개 테스트 · 우수상</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="TS">TypeScript</span>
@@ -116,10 +132,11 @@
             </span>
           </button>
           <button class="project-tile" type="button" data-project="kkakkung" aria-label="까꿍 프로젝트 자세히 보기">
-            <img src="assets/captures/kkakkung-tagger-game.png" alt="까꿍 술래 플레이 화면" />
+            <img src="assets/captures/kkakkung-tagger-game.png" alt="까꿍 술래 플레이 화면" loading="lazy" decoding="async" />
             <span class="tile-badge">Realtime Game</span>
             <strong>까꿍</strong>
             <p>웹캠 동작으로 조작하는 실시간 3D 멀티플레이 숨바꼭질 게임</p>
+            <span class="tile-outcome">지도 전송량 84% 절감 · 60클라이언트 30분 검증</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="3">Three.js</span>
@@ -128,10 +145,11 @@
             </span>
           </button>
           <button class="project-tile" type="button" data-project="gotya" aria-label="GotYA 프로젝트 자세히 보기">
-            <img src="assets/captures/gotya-home.png" alt="GotYA 홈 화면" />
+            <img src="assets/captures/gotya-taste-question-a.png" alt="GotYA 취향 테스트 화면" loading="lazy" decoding="async" />
             <span class="tile-badge">Award Project</span>
             <strong>GotYA</strong>
             <p>취향 테스트와 AI를 활용한 영화·도서·문화생활 큐레이션 서비스</p>
+            <span class="tile-outcome">27 API · 22 테이블 · 최우수상</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="V">Vue 3</span>
               <span class="stack-chip" data-logo="P">Pinia</span>
@@ -140,10 +158,11 @@
             </span>
           </button>
           <button class="project-tile" type="button" data-project="portfolio" aria-label="개인 포트폴리오 웹사이트 자세히 보기">
-            <img src="assets/captures/portfolio-project-list-check-2.png" alt="개인 포트폴리오 프로젝트 목록 화면" />
+            <img src="assets/captures/portfolio-project-list-check-2.png" alt="개인 포트폴리오 프로젝트 목록 화면" loading="lazy" decoding="async" />
             <span class="tile-badge muted">Personal Portfolio</span>
             <strong>개인 포트폴리오</strong>
             <p>프로젝트 경험과 기술적 의사결정을 한눈에 보여주기 위해 직접 설계한 반응형 포트폴리오 웹사이트</p>
+            <span class="tile-outcome">4개 프로젝트 · 반응형 UI · 접근성 개선</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="H">HTML</span>
               <span class="stack-chip" data-logo="C">CSS</span>
@@ -171,16 +190,16 @@
     </main>
 
     <button class="top-button" type="button" aria-label="맨 위로 이동">TOP</button>
-    <div class="project-modal" aria-hidden="true" role="dialog" aria-label="프로젝트 상세 보기">
+    <div class="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="프로젝트 상세 보기">
       <div class="project-modal-panel">
         <button class="project-modal-close" type="button" aria-label="닫기">×</button>
 
         <article class="project-detail-panel" data-project="itdam">
           <div class="detail-visual">
             <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
-            <img class="detail-slide-image" src="assets/captures/itdam-home.png" alt="잇담 홈 화면" />
+            <img class="detail-slide-image" src="assets/captures/itdam-drive-library.png" alt="잇담 도서관의 공동 책 목록 화면" loading="lazy" decoding="async" />
             <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption">잇담 · 홈</p>
+            <p class="detail-slide-caption" aria-live="polite">잇담 · 도서관 / 공동 책</p>
           </div>
           <div class="detail-copy">
             <div class="detail-head">
@@ -198,7 +217,7 @@
             <section><h4>내가 맡은 역할</h4><p>팀장으로 일정과 이슈를 관리했고, 프론트엔드에서는 인증, 홈, 튜토리얼, 문장 작성, 도서관, 내 서고, 보스 레이드 주요 화면을 구현했습니다. 사용자가 글을 쓰는 도중 저장 상태를 신뢰할 수 있어야 했기 때문에 입력값과 저장 요청 상태를 분리해 다뤘습니다.</p></section>
             <section><h4>상태 구조</h4><p>자동 저장과 수동 저장이 겹치면 같은 초안이 중복 저장되거나 마지막 입력이 누락될 수 있었습니다. 이를 막기 위해 작성 입력값, 저장 진행 여부, 대기 중인 최신 입력, 서버 반영 결과를 분리했습니다. 저장 중 새 입력이 들어오면 요청을 즉시 겹쳐 보내지 않고 pending 값으로 보관한 뒤 현재 요청이 끝난 다음 한 번 더 저장하도록 구성했습니다.</p></section>
             <figure class="detail-diagram">
-              <img src="assets/diagrams/itdam-state-flow.svg" alt="잇담 저장 상태 구조 다이어그램" />
+              <img src="assets/diagrams/itdam-state-flow.svg" alt="잇담 저장 상태 구조 다이어그램" loading="lazy" decoding="async" />
               <figcaption>입력 상태와 저장 상태를 분리해 마지막 문장이 안정적으로 서버에 반영되도록 만든 흐름입니다.</figcaption>
             </figure>
             <section><h4>핵심 성과</h4><p>19개 이상의 화면을 구현하고 28개 테스트로 주요 저장 흐름을 검증했습니다. 프로젝트 발표회에서는 사용 루틴과 서비스 완성도를 인정받아 우수상을 받았습니다.</p></section>
@@ -209,9 +228,9 @@
         <article class="project-detail-panel" data-project="kkakkung">
           <div class="detail-visual">
             <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
-            <img class="detail-slide-image" src="assets/captures/kkakkung-tagger-game.png" alt="까꿍 술래 플레이 HUD 화면" />
+            <img class="detail-slide-image" src="assets/captures/kkakkung-tagger-game.png" alt="까꿍 술래 플레이 HUD 화면" loading="lazy" decoding="async" />
             <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption">까꿍 · 플레이 HUD</p>
+            <p class="detail-slide-caption" aria-live="polite">까꿍 · 플레이 HUD</p>
           </div>
           <div class="detail-copy">
             <div class="detail-head">
@@ -230,7 +249,7 @@
             <section><h4>내가 맡은 역할</h4><p>프론트엔드 게임 UI, 플레이 HUD, 장비 인터랙션, 장치 점검 화면을 담당했습니다. 특히 술래 화면에서는 덫과 감지기 보유량, 설치 피드백, 추적 정보를 즉시 확인할 수 있도록 정리했고, 도망자 화면에서는 제한 시야와 지도 교환 흐름이 자연스럽게 이해되도록 구성했습니다.</p></section>
             <section><h4>실시간 구조</h4><p>모든 지도 정보와 플레이어 정보를 그대로 전송하면 역할별로 보이면 안 되는 정보까지 노출될 수 있었습니다. 서버는 원본 GameState를 유지하고, 클라이언트에는 역할별 StateView만 내려보내는 방식으로 구조를 나눴습니다. StateView에는 현재 플레이어가 볼 수 있는 타일, 엔티티, 장비 상태, 미니맵 정보만 포함해 HUD가 이 데이터만 기준으로 렌더링되도록 했습니다.</p></section>
             <figure class="detail-diagram dark">
-              <img src="assets/diagrams/kkakkung-stateview-flow.svg" alt="까꿍 역할별 StateView 구조 다이어그램" />
+              <img src="assets/diagrams/kkakkung-stateview-flow.svg" alt="까꿍 역할별 StateView 구조 다이어그램" loading="lazy" decoding="async" />
               <figcaption>서버 원본 상태를 역할별 공개 정보로 변환해 술래/도망자 화면에 필요한 정보만 전달했습니다.</figcaption>
             </figure>
             <section><h4>핵심 성과</h4><p>지도 전송량을 약 84% 줄였고, 60클라이언트 30분 부하 테스트로 실시간 플레이 흐름을 검증했습니다.</p></section>
@@ -241,9 +260,9 @@
         <article class="project-detail-panel" data-project="gotya">
           <div class="detail-visual">
             <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
-            <img class="detail-slide-image" src="assets/captures/gotya-home.png" alt="GotYA 홈 화면" />
+            <img class="detail-slide-image" src="assets/captures/gotya-taste-question-a.png" alt="GotYA 취향 테스트 화면" loading="lazy" decoding="async" />
             <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption">GotYA · 홈</p>
+            <p class="detail-slide-caption" aria-live="polite">GotYA · 취향 테스트 질문</p>
           </div>
           <div class="detail-copy">
             <div class="detail-head">
@@ -262,7 +281,7 @@
             <section><h4>내가 맡은 역할</h4><p>백엔드 데이터 모델링, API 설계, 추천 흐름 구현을 맡았습니다. 취향 테스트 결과 저장, 추천 후보 조회, 콘텐츠 유형별 추천 응답, 문화지도 데이터 연결까지 하나의 사용자 흐름으로 이어지도록 API를 정리했습니다.</p></section>
             <section><h4>데이터 구조</h4><p>영화, 도서, 문화생활은 필요한 필드가 다르지만 추천, 좋아요, 찜, 후기 구조는 함께 공유해야 했습니다. 공통으로 필요한 제목, 이미지, 유형, 추천 점수, 외부 링크는 ContentItem에 두고, 영화/도서/문화생활별 고유 필드는 상세 테이블로 분리했습니다. 사용자 상호작용은 ContentItem을 기준으로 연결해 콘텐츠 유형이 달라도 같은 추천 흐름을 사용할 수 있게 했습니다.</p></section>
             <figure class="detail-diagram">
-              <img src="assets/diagrams/gotya-data-model.svg" alt="GotYA 콘텐츠 데이터 모델 다이어그램" />
+              <img src="assets/diagrams/gotya-data-model.svg" alt="GotYA 콘텐츠 데이터 모델 다이어그램" loading="lazy" decoding="async" />
               <figcaption>공통 콘텐츠 모델을 기준으로 추천과 사용자 상호작용을 재사용하도록 설계했습니다.</figcaption>
             </figure>
             <section><h4>핵심 성과</h4><p>27개 API와 22개 테이블을 구성했고, SSAFY 1학기 프로젝트에서 최우수상을 받았습니다.</p></section>
@@ -273,9 +292,9 @@
         <article class="project-detail-panel" data-project="portfolio">
           <div class="detail-visual">
             <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
-            <img class="detail-slide-image" src="assets/captures/portfolio-project-list-check-2.png" alt="개인 포트폴리오 프로젝트 목록 화면" />
+            <img class="detail-slide-image" src="assets/captures/portfolio-project-list-check-2.png" alt="개인 포트폴리오 프로젝트 목록 화면" loading="lazy" decoding="async" />
             <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption">Portfolio · 프로젝트 목록</p>
+            <p class="detail-slide-caption" aria-live="polite">Portfolio · 프로젝트 목록</p>
           </div>
           <div class="detail-copy">
             <div class="detail-head">
@@ -298,6 +317,6 @@
         </article>
       </div>
     </div>
-    <script src="script.js?v=20261006-12"></script>
+    <script src="script.js?v=20261006-15"></script>
   </body>
 </html>

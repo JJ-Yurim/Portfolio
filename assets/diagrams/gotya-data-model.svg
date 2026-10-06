@@ -1,33 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
-  <title id="title">GotYA 콘텐츠 데이터 모델</title>
-  <desc id="desc">공통 콘텐츠 모델에서 영화, 도서, 문화생활 상세 테이블과 추천, 사용자 상호작용으로 확장되는 구조</desc>
-  <rect width="1280" height="720" rx="34" fill="#f7fbff"/>
-  <text x="86" y="96" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="34" font-weight="800" fill="#142033">GotYA · 콘텐츠 추천 데이터 구조</text>
-  <text x="86" y="140" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="20" font-weight="500" fill="#5d687a">콘텐츠 유형은 달라도 추천, 찜, 좋아요, 후기는 같은 ContentItem 기준으로 처리했습니다.</text>
-  <g font-family="IBM Plex Sans KR, Arial, sans-serif">
-    <rect x="470" y="250" width="340" height="150" rx="28" fill="#ffffff" stroke="#b9d4ea" stroke-width="2"/>
-    <text x="538" y="315" font-size="30" font-weight="800" fill="#1f8d9b">ContentItem</text>
-    <text x="538" y="356" font-size="18" fill="#5d687a">title · thumbnail · type · score</text>
-    <rect x="96" y="246" width="240" height="110" rx="24" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
-    <text x="156" y="313" font-size="24" font-weight="800" fill="#142033">TasteResult</text>
-    <rect x="944" y="214" width="240" height="94" rx="22" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
-    <text x="1020" y="273" font-size="23" font-weight="800" fill="#142033">Movie</text>
-    <rect x="944" y="336" width="240" height="94" rx="22" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
-    <text x="1028" y="395" font-size="23" font-weight="800" fill="#142033">Book</text>
-    <rect x="944" y="458" width="240" height="94" rx="22" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
-    <text x="1012" y="517" font-size="23" font-weight="800" fill="#142033">Culture</text>
-    <rect x="470" y="506" width="340" height="98" rx="24" fill="#e8faf8" stroke="#bce2df" stroke-width="2"/>
-    <text x="540" y="566" font-size="24" font-weight="800" fill="#178f80">Recommendation</text>
-    <rect x="96" y="464" width="240" height="110" rx="24" fill="#fff" stroke="#d7e6f3" stroke-width="2"/>
-    <text x="144" y="531" font-size="24" font-weight="800" fill="#142033">User Action</text>
-    <path d="M336 301h112" stroke="#37b8ad" stroke-width="5" stroke-linecap="round"/>
-    <path d="m432 283 24 18-24 18" fill="none" stroke="#37b8ad" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M810 325h106" stroke="#37b8ad" stroke-width="5" stroke-linecap="round"/>
-    <path d="m900 307 24 18-24 18" fill="none" stroke="#37b8ad" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M810 348c58 0 64 35 106 35" stroke="#37b8ad" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M810 372c80 0 62 132 106 132" stroke="#37b8ad" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M216 464c0-96 150-117 252-117" stroke="#37b8ad" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M640 400v82" stroke="#37b8ad" stroke-width="5" stroke-linecap="round"/>
-    <path d="m622 466 18 24 18-24" fill="none" stroke="#37b8ad" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
+<title id="title">GotYA 콘텐츠 데이터 모델</title>
+<desc id="desc">취향과 사용자 반응이 공통 콘텐츠 모델에 연결되고 영화 도서 문화 및 추천으로 확장되는 구조</desc>
+<defs><marker id="arrow-teal" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M3 2 8 6 3 10" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1280" height="720" rx="24" fill="#f6faf9"/>
+<g font-family="Arial, 'Malgun Gothic', sans-serif">
+<text x="72" y="62" font-size="13" font-weight="700" fill="#3a827c" letter-spacing="2">GOTYA / CONTENT MODEL</text>
+<text x="72" y="108" font-size="32" font-weight="700" fill="#233e42" >다른 콘텐츠를 하나의 기준으로</text>
+<text x="72" y="148" font-size="20" font-weight="400" fill="#626577" >영화·도서·문화생활을 ContentItem으로 연결해 추천과 사용자 반응을 함께 다룹니다.</text>
+<path d="M72 177H1208" stroke="#dbe7e5"/>
+<text x="72" y="208" font-size="15" font-weight="700" fill="#748985" >취향과 사용자 반응</text>
+<text x="456" y="208" font-size="15" font-weight="700" fill="#748985" >공통 콘텐츠 모델</text>
+<text x="960" y="208" font-size="15" font-weight="700" fill="#748985" >콘텐츠 유형</text>
+<rect  x="72" y="238" width="248" height="120" rx="16" fill="#fff" stroke="#d5e4e1"/>
+<text x="96" y="283" font-size="25" font-weight="700" fill="#355955" >TasteResult</text>
+<text x="96" y="324" font-size="19" font-weight="400" fill="#626577" >취향 테스트 결과</text>
+<rect  x="72" y="418" width="248" height="120" rx="16" fill="#fff" stroke="#d5e4e1"/>
+<text x="96" y="463" font-size="25" font-weight="700" fill="#355955" >User Action</text>
+<text x="96" y="504" font-size="19" font-weight="400" fill="#626577" >찜 · 좋아요 · 후기</text>
+<rect  x="456" y="292" width="344" height="170" rx="16" fill="#eef7f5" stroke="#afcec7"/>
+<text x="484" y="332" font-size="13" font-weight="700" fill="#588a80" >공통 기준</text>
+<text x="484" y="374" font-size="30" font-weight="700" fill="#2e7167" >ContentItem</text>
+<text x="484" y="417" font-size="18" font-weight="400" fill="#626577" >title · thumbnail · type · score</text>
+<path  d="M328 298H384Q400 298 400 314V320Q400 336 416 336H446" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path id="action-to-content" d="M328 478H384Q400 478 400 462V432Q400 416 416 416H446" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path  d="M808 322H852Q868 322 868 306V280Q868 264 884 264H950" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path id="content-to-book" d="M808 377H950" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path id="content-to-culture" d="M808 432H852Q868 432 868 448V504Q868 520 884 520H950" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<rect  x="960" y="224" width="248" height="80" rx="16" fill="#fff" stroke="#d5e4e1"/>
+<text x="988" y="274" font-size="24" font-weight="700" fill="#355955" >Movie</text>
+<rect  x="960" y="337" width="248" height="80" rx="16" fill="#fff" stroke="#d5e4e1"/>
+<text x="988" y="387" font-size="24" font-weight="700" fill="#355955" >Book</text>
+<rect  x="960" y="480" width="248" height="80" rx="16" fill="#fff" stroke="#d5e4e1"/>
+<text x="988" y="530" font-size="24" font-weight="700" fill="#355955" >Culture</text>
+<path  d="M628 470V514" fill="none" stroke="#6f9e93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<rect  x="456" y="524" width="344" height="86" rx="16" fill="#fff" stroke="#c7deda"/>
+<text x="484" y="560" font-size="24" font-weight="700" fill="#2e7167" >Recommendation</text>
+<text x="484" y="590" font-size="17" font-weight="400" fill="#626577" >공통 모델 기반 추천</text>
+<path d="M72 650H1208" stroke="#dbe7e5"/>
+<text x="72" y="683" font-size="14" font-weight="700" fill="#3a827c" >핵심 설계</text>
+<text x="168" y="683" font-size="17" font-weight="400" fill="#626577" >콘텐츠마다 다른 상세 정보는 분리하고, 추천과 사용자 반응은 공통 모델로 처리합니다.</text>
+</g>
 </svg>

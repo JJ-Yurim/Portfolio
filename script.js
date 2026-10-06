@@ -8,11 +8,11 @@ const detailPanels = document.querySelectorAll('.project-detail-panel');
 
 const projectSlides = {
   itdam: [
-    { src: 'assets/captures/itdam-home.png', alt: '잇담 홈 화면', caption: '잇담 · 홈' },
-    { src: 'assets/captures/itdam-tutorial-real.png', alt: '잇담 튜토리얼 모달 화면', caption: '잇담 · 튜토리얼' },
-    { src: 'assets/captures/itdam-library.png', alt: '잇담 도서관 화면', caption: '잇담 · 도서관' },
-    { src: 'assets/captures/itdam-archive.png', alt: '잇담 내 서고 화면', caption: '잇담 · 내 서고' },
-    { src: 'assets/captures/itdam-hall-of-fame.png', alt: '잇담 이야기의 전당 화면', caption: '잇담 · 이야기의 전당' },
+    { src: 'assets/captures/itdam-drive-library.png', alt: '잇담 도서관의 공동 책 목록 화면', caption: '잇담 · 도서관 / 공동 책' },
+    { src: 'assets/captures/itdam-drive-writing.png', alt: '오늘의 단어 카드로 문장을 작성하는 잇담 화면', caption: '잇담 · 오늘의 문장 만들기' },
+    { src: 'assets/captures/itdam-drive-archive.png', alt: 'AI 평가 점수와 원정 제출 상태를 보여주는 잇담 내 서고 화면', caption: '잇담 · 내 서고 / 평가된 문장' },
+    { src: 'assets/captures/itdam-drive-raids.png', alt: '클리어한 이야기 원정을 모아 보는 잇담 화면', caption: '잇담 · 이야기 원정' },
+    { src: 'assets/captures/itdam-drive-tutorial.png', alt: '캐릭터 다미가 서비스를 안내하는 잇담 튜토리얼 화면', caption: '잇담 · 다미의 튜토리얼' },
     { src: 'assets/diagrams/itdam-state-flow.svg', alt: '잇담 저장 상태 구조 다이어그램', caption: '잇담 · 저장 상태 구조' },
   ],
   kkakkung: [
@@ -23,8 +23,8 @@ const projectSlides = {
     { src: 'assets/diagrams/kkakkung-stateview-flow.svg', alt: '까꿍 역할별 StateView 구조 다이어그램', caption: '까꿍 · StateView 구조' },
   ],
   gotya: [
-    { src: 'assets/captures/gotya-home.png', alt: 'GotYA 홈 화면', caption: 'GotYA · 홈' },
     { src: 'assets/captures/gotya-taste-question-a.png', alt: 'GotYA 취향 테스트 질문 화면', caption: 'GotYA · 취향 테스트 질문' },
+    { src: 'assets/captures/gotya-home.png', alt: 'GotYA 홈 화면의 오류 안내 상태', caption: 'GotYA · 홈 오류 안내' },
     { src: 'assets/captures/gotya-taste-result-recommend.png', alt: 'GotYA 취향 테스트 결과 화면', caption: 'GotYA · 취향 결과' },
     { src: 'assets/captures/gotya-movie-recommend.png', alt: 'GotYA 영화 추천 화면', caption: 'GotYA · 영화 추천' },
     { src: 'assets/captures/gotya-culture-recommend.png', alt: 'GotYA 문화 추천 화면', caption: 'GotYA · 문화 추천' },
@@ -41,6 +41,19 @@ const projectSlides = {
 
 let activeProject = null;
 let activeSlideIndex = 0;
+let lastFocusedElement = null;
+
+function getFocusableElements(container) {
+  if (!container) return [];
+  return Array.from(
+    container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+  ).filter((element) => element.offsetParent !== null);
+}
+function setPageInert(isInert) {
+  document.querySelectorAll('header, main, .top-button').forEach((element) => {
+    element.inert = isInert;
+  });
+}
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -89,23 +102,31 @@ function updateSlide(projectId, direction = 0) {
 
 function openProject(projectId) {
   if (!projectModal || !projectSlides[projectId]) return;
+  lastFocusedElement = document.activeElement;
   activeProject = projectId;
   activeSlideIndex = 0;
   detailPanels.forEach((panel) => {
-    panel.classList.toggle('active', panel.dataset.project === projectId);
+    const isActive = panel.dataset.project === projectId;
+    panel.classList.toggle('active', isActive);
+    panel.setAttribute('aria-hidden', String(!isActive));
   });
   updateSlide(projectId);
   projectModal.classList.add('open');
   projectModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  setPageInert(true);
+  projectModalClose?.focus();
 }
 
 function closeProject() {
-  if (!projectModal) return;
+  if (!projectModal?.classList.contains('open')) return;
   projectModal.classList.remove('open');
   projectModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  setPageInert(false);
   activeProject = null;
+  lastFocusedElement?.focus();
+  lastFocusedElement = null;
 }
 
 projectTiles.forEach((tile) => {
@@ -128,9 +149,29 @@ projectModal?.addEventListener('click', (event) => {
   if (event.target === projectModal) closeProject();
 });
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeProject();
-  if (event.key === 'ArrowLeft' && activeProject) updateSlide(activeProject, -1);
-  if (event.key === 'ArrowRight' && activeProject) updateSlide(activeProject, 1);
+  if (!activeProject) return;
+
+  if (event.key === 'Escape') {
+    closeProject();
+    return;
+  }
+  if (event.key === 'ArrowLeft') updateSlide(activeProject, -1);
+  if (event.key === 'ArrowRight') updateSlide(activeProject, 1);
+
+  if (event.key === 'Tab') {
+    const focusableElements = getFocusableElements(projectModal);
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements.at(-1);
+    if (!firstElement || !lastElement) return;
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  }
 });
 
 function copyEmail() {

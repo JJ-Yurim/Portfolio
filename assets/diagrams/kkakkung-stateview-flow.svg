@@ -1,31 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
-  <title id="title">까꿍 역할별 StateView 구조</title>
-  <desc id="desc">서버 원본 게임 상태를 역할별 공개 정보로 필터링해 HUD와 미니맵에 전달하는 구조</desc>
-  <rect width="1280" height="720" rx="34" fill="#0f1418"/>
-  <text x="86" y="96" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="34" font-weight="800" fill="#f6f0d8">까꿍 · 역할별 StateView 구조</text>
-  <text x="86" y="140" font-family="IBM Plex Sans KR, Arial, sans-serif" font-size="20" font-weight="500" fill="#b9c0bc">술래와 도망자에게 필요한 정보만 내려보내 미니맵 노출과 전송량을 줄였습니다.</text>
-  <g font-family="IBM Plex Sans KR, Arial, sans-serif">
-    <rect x="92" y="252" width="280" height="166" rx="28" fill="#171f25" stroke="#4c5a54"/>
-    <text x="140" y="318" font-size="28" font-weight="800" fill="#f4cf65">GameState</text>
-    <text x="140" y="360" font-size="18" fill="#cad2cf">players · maze · traps</text>
-    <text x="140" y="390" font-size="18" fill="#cad2cf">sensors · exits · round</text>
-    <path d="M392 335h122" stroke="#f4cf65" stroke-width="5" stroke-linecap="round"/>
-    <path d="m498 317 26 18-26 18" fill="none" stroke="#f4cf65" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="548" y="252" width="240" height="166" rx="28" fill="#1b272c" stroke="#5a685f"/>
-    <text x="596" y="318" font-size="28" font-weight="800" fill="#e9f1de">View Filter</text>
-    <text x="596" y="360" font-size="18" fill="#cad2cf">role · visibility</text>
-    <text x="596" y="390" font-size="18" fill="#cad2cf">equipment scope</text>
-    <path d="M788 305h110" stroke="#f4cf65" stroke-width="5" stroke-linecap="round"/>
-    <path d="m882 287 26 18-26 18" fill="none" stroke="#f4cf65" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M788 365h110" stroke="#7bd7ca" stroke-width="5" stroke-linecap="round"/>
-    <path d="m882 347 26 18-26 18" fill="none" stroke="#7bd7ca" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="930" y="210" width="250" height="130" rx="26" fill="#202b25" stroke="#6a7341"/>
-    <text x="986" y="265" font-size="26" font-weight="800" fill="#f4cf65">TaggerView</text>
-    <text x="986" y="304" font-size="17" fill="#cad2cf">덫 · 감지기 · 추적 HUD</text>
-    <rect x="930" y="384" width="250" height="130" rx="26" fill="#18292d" stroke="#42716c"/>
-    <text x="982" y="439" font-size="26" font-weight="800" fill="#7bd7ca">RunnerView</text>
-    <text x="982" y="478" font-size="17" fill="#cad2cf">지도 교환 · 탈출 정보</text>
-    <rect x="214" y="512" width="852" height="82" rx="24" fill="#151c21" stroke="#3e4945"/>
-    <text x="278" y="563" font-size="22" font-weight="800" fill="#f6f0d8">HUD / MiniMap / Equipment UI는 StateView만 읽어 렌더링</text>
-  </g>
+<title id="title">까꿍 역할별 StateView 구조</title>
+<desc id="desc">GameState에서 View Filter를 거쳐 TaggerView와 RunnerView로 분기되는 구조</desc>
+<defs><marker id="arrow-neutral" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M3 2 8 6 3 10" fill="none" stroke="#819d96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="arrow-gold" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M3 2 8 6 3 10" fill="none" stroke="#d3ba72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="arrow-mint" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M3 2 8 6 3 10" fill="none" stroke="#80baad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1280" height="720" rx="24" fill="#131e23"/>
+<g font-family="Arial, 'Malgun Gothic', sans-serif">
+<text x="72" y="62" font-size="13" font-weight="700" fill="#82cdbf" letter-spacing="2">KKAKKUNG / STATE VIEW</text>
+<text x="72" y="108" font-size="32" font-weight="700" fill="#f0f3f2" >역할에 필요한 정보만 전달</text>
+<text x="72" y="148" font-size="20" font-weight="400" fill="#a7b5b1" >서버의 원본 상태를 역할별로 필터링해 각 플레이어의 화면에 전달합니다.</text>
+<path d="M72 177H1208" stroke="#303f42"/>
+<text x="72" y="216" font-size="15" font-weight="700" fill="#8b9f9a" >서버 원본</text>
+<text x="448" y="216" font-size="15" font-weight="700" fill="#8b9f9a" >정보 필터링</text>
+<text x="920" y="216" font-size="15" font-weight="700" fill="#8b9f9a" >역할별 화면</text>
+<rect  x="72" y="280" width="280" height="188" rx="16" fill="#1c292e" stroke="#3b4d51"/>
+<text x="100" y="324" font-size="28" font-weight="700" fill="#eef3f1" >GameState</text>
+<text x="100" y="368" font-size="19" font-weight="400" fill="#b0beb9" >players · maze · traps</text>
+<text x="100" y="400" font-size="19" font-weight="400" fill="#b0beb9" >sensors · exits · round</text>
+<text x="100" y="441" font-size="15" font-weight="400" fill="#7e9991" >게임 전체 상태</text>
+<rect  x="448" y="280" width="280" height="188" rx="16" fill="#1c292e" stroke="#3b4d51"/>
+<text x="476" y="324" font-size="28" font-weight="700" fill="#eef3f1" >View Filter</text>
+<text x="476" y="368" font-size="19" font-weight="400" fill="#b0beb9" >role · visibility</text>
+<text x="476" y="400" font-size="19" font-weight="400" fill="#b0beb9" >equipment scope</text>
+<text x="476" y="441" font-size="15" font-weight="400" fill="#7e9991" >역할과 공개 범위 적용</text>
+<path  d="M360 374H438" fill="none" stroke="#819d96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-neutral)"/>
+<path  d="M736 346H810Q826 346 826 330V318Q826 302 842 302H910" fill="none" stroke="#d3ba72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-gold)"/>
+<path  d="M736 402H810Q826 402 826 418V462Q826 478 842 478H910" fill="none" stroke="#80baad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-mint)"/>
+<rect  x="920" y="234" width="288" height="136" rx="16" fill="#29312b" stroke="#575b40"/>
+<text x="948" y="270" font-size="14" font-weight="700" fill="#b3a774" >술래에게 공개</text>
+<text x="948" y="311" font-size="27" font-weight="700" fill="#e6d18f" >TaggerView</text>
+<text x="948" y="343" font-size="18" font-weight="400" fill="#bec8bd" >덫 · 감지기 · 추적 HUD</text>
+<rect  x="920" y="410" width="288" height="136" rx="16" fill="#1c3032" stroke="#395851"/>
+<text x="948" y="446" font-size="14" font-weight="700" fill="#81b6a9" >도망자에게 공개</text>
+<text x="948" y="487" font-size="27" font-weight="700" fill="#9ed6c7" >RunnerView</text>
+<text x="948" y="519" font-size="18" font-weight="400" fill="#bacac5" >지도 교환 · 탈출 정보</text>
+<rect  x="72" y="594" width="1136" height="68" rx="16" fill="#1a272b" stroke="#304248"/>
+<text x="100" y="637" font-size="15" font-weight="700" fill="#82cdbf" >화면 렌더링</text>
+<text x="248" y="637" font-size="20" font-weight="400" fill="#d2ddda" >HUD · MiniMap · Equipment UI는 필터링된 StateView만 읽습니다.</text>
+</g>
 </svg>
