@@ -6,7 +6,7 @@
     <title>정유림 포트폴리오 | Frontend Developer</title>
     <meta
       name="description"
-      content="고객의 불편을 직접 마주한 최전선 개발자 정유림의 포트폴리오"
+      content="현장에서 고객의 불편을 직접 마주한 최전선 개발자 정유림의 포트폴리오"
     />
     <link rel="canonical" href="https://jj-yurim.github.io/Portfolio/" />
     <meta property="og:type" content="website" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="정유림 포트폴리오 | Frontend Developer" />
     <meta
       property="og:description"
-      content="사용자 흐름과 데이터 구조를 함께 설계하는 프론트엔드 개발자 정유림의 포트폴리오"
+      content="현장에서 고객의 불편을 직접 마주한 최전선 개발자 정유림의 포트폴리오"
     />
     <meta property="og:url" content="https://jj-yurim.github.io/Portfolio/" />
     <meta
@@ -30,14 +30,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20261006-18" />
+    <link rel="stylesheet" href="editorial.css?v=20261006-1" />
   </head>
   <body>
     <header class="site-header">
-      <button class="brand" type="button" data-scroll="#top">Yurim's Portfolio</button>
+      <button class="brand" type="button" data-scroll="#top">정유림<span aria-hidden="true">.</span></button>
       <nav class="nav-links" aria-label="주요 섹션">
         <button type="button" data-scroll="#about">About Me</button>
         <button type="button" data-scroll="#skills">Skills</button>
-        <button type="button" data-scroll="#archiving">Archiving</button>
+        <button type="button" data-scroll="#contact">Contact</button>
         <button type="button" data-scroll="#projects">Projects</button>
         <button type="button" data-scroll="#awards">Awards</button>
       </nav>
@@ -47,74 +48,34 @@
       <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="hero-kicker">JUNG YURIM PORTFOLIO</p>
-          <h1 aria-label="고객의 불편을 직접 마주한 최전선 개발자">
-            <span>고객의 불편을</span>
+          <p class="hero-kicker">FRONTEND DEVELOPER · PORTFOLIO 2026</p>
+          <h1>
+            <span class="slogan-context">현장에서 고객의 불편을</span>
             <span>직접 마주한</span>
-            <span>최전선 개발자</span>
+            <span><em>최전선 개발자</em></span>
           </h1>
-          <div class="hero-line"></div>
+          <div class="hero-summary">
           <p class="hero-lead">
-            응대하던 자리에서 서비스를 만드는 자리로 옮겨왔습니다.<br />
-            화면이든 서버든, 경험이 닿는 곳까지 고민합니다.
+            <strong class="hero-name">정유림 · Frontend Developer</strong>
+            응대하던 자리에서 서비스를 만드는 자리로.<br />
+            <span>사용자의 불편을 발견하고,<br />화면과 데이터가 이어지는 경험을 만듭니다.</span>
           </p>
-          <button class="cta-button" type="button" data-scroll="#about">더 알아보기</button>
-        </div>
-      </section>
-
-      <section id="about" class="section section-white">
-        <div class="section-title reveal">
-          <span class="title-icon">⌁</span>
-          <h2>ABOUT ME</h2>
-        </div>
-        <div class="about-list reveal">
-          <article class="info-item"><span class="info-icon">01</span><div><strong>이름</strong><p>정유림</p></div></article>
-          <article class="info-item"><span class="info-icon">02</span><div><strong>지원 방향</strong><p>Frontend Developer</p></div></article>
-          <article class="info-item"><span class="info-icon">03</span><div><strong>강점</strong><p>사용자 흐름 · 문서화 · 협업</p></div></article>
-          <article class="info-item"><span class="info-icon">04</span><div><strong>이메일</strong><p>dbfan98@naver.com</p></div></article>
-          <article class="info-item"><span class="info-icon">05</span><div><strong>교육</strong><p>SSAFY 웹 개발 교육과정</p></div></article>
-          <article class="info-item"><span class="info-icon">06</span><div><strong>이전 경험</strong><p>호텔 마케팅 판촉실 3년 4개월</p></div></article>
-        </div>
-        <div class="about-story reveal">
-          <h3>고객을 응대하던 자리에서 서비스를 만드는 자리로</h3>
-          <p>
-            호텔 현장에서 고객의 불편과 운영의 비효율을 가까이에서 경험했습니다. 반복되는 불편을
-            응대하는 데서 끝내지 않고, 더 오래 남는 방식으로 해결하고 싶어 개발을 시작했습니다.
-            지금은 화면, API 응답, 데이터 구조, 예외 상황이 자연스럽게 이어지는 서비스를 고민합니다.
-          </p>
-        </div>
-      </section>
-
-      <section id="skills" class="section section-yellow">
-        <div class="section-title reveal"><span class="title-icon">⌁</span><h2>SKILLS</h2></div>
-        <div class="skills-grid reveal">
-          <article class="skill-group"><h3>Language</h3><ul><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li></ul></article>
-          <article class="skill-group"><h3>Frontend</h3><ul><li>React</li><li>Vue 3</li><li>Vite</li><li>TanStack Query</li><li>Tailwind CSS</li></ul></article>
-          <article class="skill-group"><h3>Backend</h3><ul><li>Django · DRF</li><li>Spring Boot</li><li>FastAPI</li><li>REST API</li></ul></article>
-          <article class="skill-group"><h3>Collaboration</h3><ul><li>Git · GitLab</li><li>Jira</li><li>테스트 코드</li><li>요구사항 · API 문서화</li></ul></article>
-        </div>
-      </section>
-
-      <section id="archiving" class="section section-white">
-        <div class="section-title reveal"><span class="title-icon">⌁</span><h2>ARCHIVING</h2></div>
-        <div class="archive-grid reveal">
-          <a class="archive-card" href="https://github.com/JJ-Yurim" target="_blank" rel="noreferrer">
-            <span>GitHub</span><strong>github.com/JJ-Yurim</strong>
-            <p>프로젝트 소스코드, README, 실행 방법을 정리한 공개용 스냅샷입니다. 원본 협업 이력은 GitLab에 있습니다.</p>
-          </a>
-          <button class="archive-card" type="button" onclick="copyEmail()">
-            <span>Email</span><strong>dbfan98@naver.com</strong>
-            <p>클릭하면 이메일 주소가 복사됩니다.</p>
-          </button>
+          <div class="hero-actions">
+            <button class="cta-button" type="button" data-scroll="#projects">프로젝트 보기 <span aria-hidden="true">↗</span></button>
+            <button class="text-button" type="button" data-scroll="#about">더 알아보기</button>
+          </div>
+          </div>
+          <div class="hero-foot"><span>React · TypeScript · 사용자 경험</span><span>아이디어를 실제로 작동하는 화면으로</span></div>
         </div>
       </section>
 
       <section id="projects" class="section section-gray">
         <div class="section-title reveal">
           <span class="title-icon">⌁</span>
-          <h2>PROJECTS</h2>
+          <span class="section-index">01 / SELECTED WORK</span>
+          <h2>프로젝트<span class="section-count">04</span></h2>
           <p class="section-copy">
-            화면을 만드는 데서 끝내지 않고, 사용 흐름과 데이터 구조가 맞물리는 지점을 함께 설계했습니다.
+            직접 만든 화면과, 그 안에서 해결한 문제들.
           </p>
         </div>
         <div class="project-list reveal">
@@ -173,8 +134,45 @@
         </div>
       </section>
 
+      <section id="about" class="section section-white">
+        <div class="section-title reveal"><span class="section-index">02 / ABOUT ME</span><h2>경력과 교육</h2></div>
+        <div class="career-layout reveal">
+          <div class="career-intro">
+            <h3>호텔 현장 경험에서<br />웹 서비스 개발로.</h3>
+            <p>호텔 현장에서 고객의 불편과 운영의 비효율을 경험했습니다. 이제 그 경험을 바탕으로 문제를 서비스로 해결하고자 합니다.</p>
+            <p class="career-strength">사용자 흐름 · 문서화 · 협업</p>
+          </div>
+          <div class="career-history">
+            <section aria-labelledby="career-heading">
+              <h3 id="career-heading">경력</h3>
+              <dl class="career-list">
+                <div><dt><time datetime="2022-03">2022.03</time> — <time datetime="2025-06">2025.06</time></dt><dd><strong>히든베이호텔</strong><p>마케팅 판촉실 · 주임</p></dd></div>
+              </dl>
+            </section>
+            <section aria-labelledby="education-heading">
+              <h3 id="education-heading">교육 · 학력</h3>
+              <dl class="career-list">
+                <div><dt><time datetime="2026-01">2026.01</time> — 현재</dt><dd><strong>삼성청년SW·AI아카데미</strong><p>웹 개발 교육과정</p></dd></div>
+                <div><dt><time datetime="2025-08">2025.08</time> — <time datetime="2026-01">2026.01</time></dt><dd><strong>아이티윌 (ITWill)</strong><p>데이터 분석 교육과정 · 미이수</p></dd></div>
+                <div><dt><time datetime="2017-03">2017.03</time> — <time datetime="2021-08">2021.08</time></dt><dd><strong>호남대학교</strong><p>호텔경영학과 졸업</p></dd></div>
+              </dl>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section section-yellow">
+        <div class="section-title reveal"><span class="section-index">03 / SKILLS</span><h2>사용하는 기술</h2></div>
+        <div class="skills-grid reveal">
+          <article class="skill-group"><h3>Language</h3><ul><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li></ul></article>
+          <article class="skill-group"><h3>Frontend</h3><ul><li>React</li><li>Vue 3</li><li>Vite</li><li>TanStack Query</li><li>Tailwind CSS</li></ul></article>
+          <article class="skill-group"><h3>Backend</h3><ul><li>Django · DRF</li><li>Spring Boot</li><li>FastAPI</li><li>REST API</li></ul></article>
+          <article class="skill-group"><h3>Collaboration</h3><ul><li>Git · GitLab</li><li>Jira</li><li>테스트 코드</li><li>요구사항 · API 문서화</li></ul></article>
+        </div>
+      </section>
+
       <section id="awards" class="section section-white">
-        <div class="section-title reveal"><span class="title-icon">⌁</span><h2>AWARDS</h2></div>
+        <div class="section-title reveal"><span class="section-index">04 / AWARDS</span><h2>수상 이력</h2></div>
         <div class="award-grid reveal">
           <article><span>2026.06</span><strong>SSAFY 1학기 프로젝트 최우수상</strong><p>GotYA · 광주 1반 1등</p></article>
           <article><span>2026.08</span><strong>SSAFY 2학기 프로젝트 우수상</strong><p>잇담 · 발표회 3등</p></article>
@@ -183,9 +181,11 @@
       </section>
 
       <section id="contact" class="section contact">
-        <h2 class="reveal">사용자와 맞닿은 모든 곳이 최전선이라고 믿습니다.</h2>
-        <p class="reveal">화면이든 서버든, 경험이 닿는 곳까지 고민하겠습니다.</p>
-        <div class="contact-actions reveal"><a href="mailto:dbfan98@naver.com">Email</a><a href="https://github.com/JJ-Yurim" target="_blank" rel="noreferrer">GitHub</a></div>
+        <div class="section-title reveal"><span class="section-index">05 / ARCHIVING &amp; CONTACT</span><h2>기록과 연락</h2></div>
+        <div class="contact-grid reveal">
+          <a class="contact-item" href="mailto:dbfan98@naver.com"><span>Email <span aria-hidden="true">↗</span></span><strong>dbfan98@naver.com</strong><p>메일로 연락하기</p></a>
+          <a class="contact-item" href="https://github.com/JJ-Yurim" target="_blank" rel="noreferrer"><span>GitHub <span aria-hidden="true">↗</span></span><strong>github.com/JJ-Yurim</strong><p>프로젝트 소스코드와 README를 정리한 공개용 스냅샷입니다. 원본 협업 이력은 GitLab에 있습니다.</p></a>
+        </div>
       </section>
     </main>
 
