@@ -16,10 +16,9 @@ const projectSlides = {
     { src: 'assets/diagrams/itdam-state-flow.svg', alt: '잇담 저장 상태 구조 다이어그램', caption: '잇담 · 저장 상태 구조' },
   ],
   kkakkung: [
-    { src: 'assets/captures/kkakkung-tagger-game.png', alt: '까꿍 술래 플레이 HUD 화면', caption: '까꿍 · 플레이 HUD' },
-    { src: 'assets/captures/kkakkung-tagger-trap-installed.png', alt: '까꿍 술래 화면 덫 설치 상태', caption: '까꿍 · 덫 설치 상태' },
-    { src: 'assets/captures/kkakkung-tagger-sensor-installed.png', alt: '까꿍 술래 화면 감지기 설치 상태', caption: '까꿍 · 감지기 설치 상태' },
-    { src: 'assets/captures/kkakkung-preview-exchange.png', alt: '까꿍 지도 교환 화면', caption: '까꿍 · 지도 교환' },
+    { src: 'assets/captures/kkakkung-runner-facing-tagger.jpg', alt: '까꿍 도망자 시점에서 정면으로 마주 본 빨간 술래 인형', caption: '까꿍 · 도망자 시점의 술래 대면 · 실제 게임 인형 데모' },
+    { src: 'assets/captures/kkakkung-tagger-equipment.jpg', alt: '까꿍 술래가 설치한 왼쪽 벽 감지기와 앞쪽 바닥 덫을 뒤에서 보는 화면', caption: '까꿍 · 술래의 덫·감지기 설치 · 실제 게임 인형 데모' },
+    { src: 'assets/captures/kkakkung-map-exchange-complete.jpg', alt: '까꿍 도망자끼리 지도 교환 후 완료 알림이 표시된 화면', caption: '까꿍 · 도망자 간 지도 교환 완료 · 실제 게임 인형 데모' },
     { src: 'assets/diagrams/kkakkung-stateview-flow.svg', alt: '까꿍 역할별 StateView 구조 다이어그램', caption: '까꿍 · StateView 구조' },
   ],
   gotya: [

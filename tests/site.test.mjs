@@ -119,7 +119,7 @@ test('every project slide asset exists and modal images never crop content', asy
   const [js, css] = await Promise.all([read('script.js'), read('styles.css')]);
   const slideSources = [...js.matchAll(/src: '([^']+)'/g)].map((match) => match[1]);
 
-  assert.equal(slideSources.length, 22);
+  assert.equal(slideSources.length, 21);
   await Promise.all(slideSources.map((source) => access(new URL(`../${source}`, import.meta.url))));
   assert.match(css, /\.detail-slide-image\s*{[^}]*object-fit:\s*contain/s);
 });
@@ -130,4 +130,15 @@ test('GotYA data relationships expose direction on every curved connector', asyn
   for (const id of ['content-to-book', 'content-to-culture', 'action-to-content']) {
     assert.match(svg, new RegExp(`id="${id}"[^>]*marker-end="url\\(#arrow-teal\\)"`));
   }
+});
+
+test('kkakkung uses the actual gameplay captures with matching cover and demo captions', async () => {
+  const [html, js] = await Promise.all([read('index.html'), read('script.js')]);
+  const gallery = js.match(/kkakkung: \[([\s\S]*?)\n  \],/)[1];
+  for (const filename of ['kkakkung-runner-facing-tagger.jpg', 'kkakkung-tagger-equipment.jpg', 'kkakkung-map-exchange-complete.jpg']) {
+    assert.ok(gallery.includes(`assets/captures/${filename}`));
+  }
+  assert.equal((gallery.match(/실제 게임 인형 데모/g) || []).length, 3);
+  assert.equal((html.match(/src="assets\/captures\/kkakkung-runner-facing-tagger\.jpg"/g) || []).length, 2);
+  assert.doesNotMatch(gallery, /kkakkung-preview-exchange|kkakkung-tagger-game\.png|kkakkung-tagger-trap-installed|kkakkung-tagger-sensor-installed/);
 });
