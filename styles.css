@@ -728,11 +728,11 @@ a:focus-visible {
   top: auto;
   overflow: hidden;
   width: min(920px, 100%);
-  margin: 42px auto 48px;
+  margin: 0 auto 24px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: #171716;
-  box-shadow: 0 22px 64px rgba(36, 35, 31, 0.16);
+  background: var(--soft);
+  box-shadow: 0 8px 28px rgba(36, 35, 31, 0.07);
 }
 .detail-slide-image {
   display: block;
@@ -747,72 +747,77 @@ a:focus-visible {
   background: #f7f8fb;
 }
 .slide-button {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
+  position: static;
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255, 253, 250, 0.88);
-  color: #24231f;
-  font-size: 34px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: 28px;
   font-weight: 300;
   line-height: 1;
-  transform: translateY(-50%);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
 }
-.slide-button.prev { left: 18px; }
-.slide-button.next { right: 18px; }
+.slide-button:hover { background: var(--soft-accent); border-color: var(--accent); }
+.slide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+}
+.slide-controls { display: flex; flex-shrink: 0; align-items: center; gap: 8px; }
+.slide-counter { min-width: 44px; text-align: center; white-space: nowrap; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--body); }
 .detail-slide-caption {
-  position: absolute;
-  left: 18px;
-  bottom: 18px;
   margin: 0;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(17, 17, 15, 0.72);
-  color: #fff;
+  color: var(--body);
   font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-  backdrop-filter: blur(8px);
+  font-weight: 500;
+  line-height: 1.6;
 }
 .detail-copy {
   width: min(920px, 100%);
   margin: 0 auto;
   padding: 6px 0 20px;
 }
-.detail-head span {
+.detail-header { width: min(920px, 100%); margin: 0 auto 28px; }
+.detail-eyebrow {
   display: inline-flex;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  padding-right: 48px;
   color: var(--accent-dark);
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .02em;
+  letter-spacing: .12em;
 }
-.detail-head h3 {
+.detail-header h3 {
   margin: 0;
-  font-size: clamp(40px, 4.5vw, 64px);
+  font-size: clamp(30px, 4vw, 48px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.2;
+  letter-spacing: -.04em;
 }
-.detail-head p {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 16px;
+.detail-intro {
+  margin: 12px 0 24px;
+  color: var(--body);
+  font-size: 18px;
   font-weight: 500;
 }
+.detail-meta { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; margin: 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.detail-meta dt { margin-bottom: 4px; color: var(--muted); font-size: 12px; }
+.detail-meta dd { margin: 0; color: var(--ink); font-size: 14px; font-weight: 600; }
 .detail-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 26px 0 34px;
+  margin: 0 0 24px;
 }
 .detail-chips .stack-chip {
-  padding: 8px 12px;
-  font-size: 15px;
+  padding: 6px 10px;
+  font-size: 13px;
 }
 .detail-copy section {
   padding: 28px 0;
@@ -826,11 +831,17 @@ a:focus-visible {
 }
 .detail-copy section p {
   margin: 0;
-  color: #4e493f;
+  color: var(--body);
   font-size: 18px;
   font-weight: 500;
   line-height: 1.9;
 }
+.case-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 28px; }
+.detail-copy .case-summary section { padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); }
+.case-label { display: block; margin-bottom: 12px; color: var(--accent-dark); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.detail-copy .case-summary h4 { margin-bottom: 10px; font-size: 20px; }
+.detail-copy .case-summary p { font-size: 15px; font-weight: 400; line-height: 1.75; }
+.case-summary p strong { display: block; margin-bottom: 8px; color: var(--accent-dark); font-weight: 700; }
 .detail-diagram {
   margin: 8px 0 28px;
   padding: 18px;
@@ -971,19 +982,22 @@ a:focus-visible {
     border-radius: 20px;
   }
   .project-modal-close {
+    top: 14px;
+    right: 14px;
     width: 42px;
     height: 42px;
     font-size: 34px;
   }
   .detail-slide-image { aspect-ratio: 4 / 3; }
-  .slide-button {
-    width: 40px;
-    height: 40px;
-    font-size: 28px;
-  }
-  .slide-button.prev { left: 10px; }
-  .slide-button.next { right: 10px; }
-  .detail-head h3 { font-size: 40px; }
+  .slide-footer { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
+  .slide-controls { align-self: flex-end; }
+  .detail-header { margin-bottom: 22px; }
+  .detail-eyebrow { font-size: 10px; }
+  .detail-intro { font-size: 16px; }
+  .detail-meta { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .detail-meta > div:first-child { grid-column: 1 / -1; }
+  .detail-meta dd { font-size: 13px; }
+  .case-summary { grid-template-columns: 1fr; }
   .detail-copy h4 { font-size: 22px; }
   .detail-copy section p { font-size: 16px; line-height: 1.75; }
   .architecture-flow span:not(:last-child)::after {
@@ -1005,13 +1019,8 @@ a:focus-visible {
   }
 }
 
-/* Keep captures and diagrams clear of slideshow controls. */
-.project-tile[data-project="itdam"] img { object-fit: contain; background: #eeeaf6; }
-.detail-visual { padding-bottom: 64px; background: #f7f8fb; box-shadow: 0 8px 28px rgba(36, 35, 31, .07); }
-.slide-button { top: auto; bottom: 12px; width: 38px; height: 38px; transform: none; font-size: 26px; box-shadow: none; border: 1px solid var(--line); background: #fff; }
-.slide-button.prev { left: auto; right: 62px; }
-.slide-button.next { right: 14px; }
-.detail-slide-caption { left: 18px; bottom: 19px; max-width: calc(100% - 136px); padding: 0; border-radius: 0; background: transparent; color: var(--body); line-height: 1.5; backdrop-filter: none; }
+/* A shared frame preserves every project's actual screen without cropping. */
+.project-tile img { padding: 12px; object-fit: contain; object-position: center; border: 1px solid var(--line); background: var(--soft); }
 .detail-diagram { padding: 0; overflow: hidden; background: #faf9fd; }
 .detail-diagram img { border-radius: 0; }
 .detail-diagram figcaption { margin: 0; padding: 16px 22px; border-top: 1px solid var(--line); font-weight: 500; }

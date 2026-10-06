@@ -49,7 +49,7 @@ function getFocusableElements(container) {
   ).filter((element) => element.offsetParent !== null);
 }
 function setPageInert(isInert) {
-  document.querySelectorAll('header, main, .top-button').forEach((element) => {
+  document.querySelectorAll('.site-header, main, .top-button').forEach((element) => {
     element.inert = isInert;
   });
 }
@@ -90,6 +90,7 @@ function updateSlide(projectId, direction = 0) {
   const slide = slides[activeSlideIndex];
   const image = panel.querySelector('.detail-slide-image');
   const caption = panel.querySelector('.detail-slide-caption');
+  const counter = panel.querySelector('.slide-counter');
 
   if (image) {
     image.src = slide.src;
@@ -97,6 +98,10 @@ function updateSlide(projectId, direction = 0) {
     image.classList.toggle('diagram-slide', slide.src.includes('/diagrams/'));
   }
   if (caption) caption.textContent = slide.caption;
+  if (counter) {
+    counter.textContent = `${activeSlideIndex + 1} / ${slides.length}`;
+    counter.setAttribute('aria-label', `전체 ${slides.length}장 중 ${activeSlideIndex + 1}번째 화면`);
+  }
 }
 
 function openProject(projectId) {
@@ -111,6 +116,7 @@ function openProject(projectId) {
   });
   updateSlide(projectId);
   projectModal.classList.add('open');
+  projectModal.scrollTop = 0;
   projectModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
   setPageInert(true);

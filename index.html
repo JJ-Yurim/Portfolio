@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261006-15" />
+    <link rel="stylesheet" href="styles.css?v=20261006-18" />
   </head>
   <body>
     <header class="site-header">
@@ -195,49 +195,71 @@
         <button class="project-modal-close" type="button" aria-label="닫기">×</button>
 
         <article class="project-detail-panel" data-project="itdam">
+          <header class="detail-header">
+            <span class="detail-eyebrow">01 / CREATIVE WRITING</span>
+            <h3>잇담</h3>
+            <p class="detail-intro">다섯 단어로 시작해, 함께 이야기를 완성하는 창작 게임</p>
+            <dl class="detail-meta">
+              <div><dt>담당 역할</dt><dd>팀장 · 프론트엔드 주요 화면</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.07 — 2026.08</dd></div>
+              <div><dt>팀 구성</dt><dd>6인 팀 프로젝트</dd></div>
+            </dl>
+          </header>
           <div class="detail-visual">
-            <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
             <img class="detail-slide-image" src="assets/captures/itdam-drive-library.png" alt="잇담 도서관의 공동 책 목록 화면" loading="lazy" decoding="async" />
-            <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption" aria-live="polite">잇담 · 도서관 / 공동 책</p>
+            <div class="slide-footer">
+              <p class="detail-slide-caption" aria-live="polite">잇담 · 도서관 / 공동 책</p>
+              <div class="slide-controls" role="group" aria-label="프로젝트 화면 탐색">
+                <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
+                <span class="slide-counter" aria-live="polite">1 / 6</span>
+                <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
+              </div>
+            </div>
           </div>
           <div class="detail-copy">
-            <div class="detail-head">
-              <span>개인 기여도 높은 팀 프로젝트</span>
-              <h3>잇담</h3>
-              <p>2026.07 - 2026.08 · 6인 팀 프로젝트</p>
-            </div>
             <div class="detail-chips">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="TS">TypeScript</span>
               <span class="stack-chip" data-logo="S">Spring Boot</span>
               <span class="stack-chip" data-logo="F">FastAPI</span>
             </div>
-            <section><h4>프로젝트 소개</h4><p>매일 공개되는 다섯 단어를 조합해 문장을 만들고, AI 평가 결과를 바탕으로 보스 레이드에 참여하는 창작 게임 서비스입니다. 단어 확인, 문장 작성, 평가 요청, 도서관 저장, 튜토리얼 안내가 하나의 루틴으로 이어지도록 설계했습니다.</p></section>
-            <section><h4>내가 맡은 역할</h4><p>팀장으로 일정과 이슈를 관리했고, 프론트엔드에서는 인증, 홈, 튜토리얼, 문장 작성, 도서관, 내 서고, 보스 레이드 주요 화면을 구현했습니다. 사용자가 글을 쓰는 도중 저장 상태를 신뢰할 수 있어야 했기 때문에 입력값과 저장 요청 상태를 분리해 다뤘습니다.</p></section>
+            <div class="case-summary" aria-label="문제 해결과 핵심 성과">
+              <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>자동 저장과 수동 저장이 겹칠 때, 마지막 입력을 잃지 않는 작성 경험이 필요했습니다.</p></section>
+              <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>일정·이슈를 관리하고 인증부터 문장 작성, 도서관, 서고, 레이드까지 주요 화면과 저장 상태 흐름을 구현했습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>19+ 화면 · 28개 테스트</strong>주요 저장 흐름을 검증하고, SSAFY 프로젝트 우수상을 받았습니다.</p></section>
+            </div>
             <section><h4>상태 구조</h4><p>자동 저장과 수동 저장이 겹치면 같은 초안이 중복 저장되거나 마지막 입력이 누락될 수 있었습니다. 이를 막기 위해 작성 입력값, 저장 진행 여부, 대기 중인 최신 입력, 서버 반영 결과를 분리했습니다. 저장 중 새 입력이 들어오면 요청을 즉시 겹쳐 보내지 않고 pending 값으로 보관한 뒤 현재 요청이 끝난 다음 한 번 더 저장하도록 구성했습니다.</p></section>
             <figure class="detail-diagram">
               <img src="assets/diagrams/itdam-state-flow.svg" alt="잇담 저장 상태 구조 다이어그램" loading="lazy" decoding="async" />
               <figcaption>입력 상태와 저장 상태를 분리해 마지막 문장이 안정적으로 서버에 반영되도록 만든 흐름입니다.</figcaption>
             </figure>
-            <section><h4>핵심 성과</h4><p>19개 이상의 화면을 구현하고 28개 테스트로 주요 저장 흐름을 검증했습니다. 프로젝트 발표회에서는 사용 루틴과 서비스 완성도를 인정받아 우수상을 받았습니다.</p></section>
             <a class="detail-link" href="https://github.com/JJ-Yurim/itdam-project" target="_blank" rel="noreferrer">GitHub README</a>
           </div>
         </article>
 
         <article class="project-detail-panel" data-project="kkakkung">
+          <header class="detail-header">
+            <span class="detail-eyebrow">02 / REALTIME MULTIPLAYER</span>
+            <h3>까꿍</h3>
+            <p class="detail-intro">몸으로 조작하고, 제한된 정보를 나누며 탈출하는 3D 숨바꼭질</p>
+            <dl class="detail-meta">
+              <div><dt>담당 역할</dt><dd>게임 UI · HUD · 장비 인터랙션</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.08 — 2026.09</dd></div>
+              <div><dt>팀 구성</dt><dd>6인 팀 프로젝트</dd></div>
+            </dl>
+          </header>
           <div class="detail-visual">
-            <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
             <img class="detail-slide-image" src="assets/captures/kkakkung-runner-facing-tagger.jpg" alt="까꿍 도망자 시점에서 정면으로 마주 본 빨간 술래 인형" loading="lazy" decoding="async" />
-            <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption" aria-live="polite">까꿍 · 도망자 시점의 술래 대면 · 실제 게임 인형 데모</p>
+            <div class="slide-footer">
+              <p class="detail-slide-caption" aria-live="polite">까꿍 · 도망자 시점의 술래 대면 · 실제 게임 인형 데모</p>
+              <div class="slide-controls" role="group" aria-label="프로젝트 화면 탐색">
+                <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
+                <span class="slide-counter" aria-live="polite">1 / 4</span>
+                <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
+              </div>
+            </div>
           </div>
           <div class="detail-copy">
-            <div class="detail-head">
-              <span>실시간 3D 멀티플레이</span>
-              <h3>까꿍</h3>
-              <p>2026.08 - 2026.09 · 6인 팀 프로젝트</p>
-            </div>
             <div class="detail-chips">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="3">Three.js</span>
@@ -245,31 +267,43 @@
               <span class="stack-chip" data-logo="C">Colyseus</span>
               <span class="stack-chip" data-logo="L">LiveKit</span>
             </div>
-            <section><h4>프로젝트 소개</h4><p>웹캠 동작으로 캐릭터를 조작하는 실시간 3D 숨바꼭질 게임입니다. 술래는 덫과 감지기로 도망자의 동선을 좁히고, 도망자는 제한된 지도 정보를 교환하며 출구를 찾아야 합니다. 역할별 목표가 다르기 때문에 플레이 화면, HUD, 장비 상태, 미니맵 정보를 명확히 구분하는 데 집중했습니다.</p></section>
-            <section><h4>내가 맡은 역할</h4><p>프론트엔드 게임 UI, 플레이 HUD, 장비 인터랙션, 장치 점검 화면을 담당했습니다. 특히 술래 화면에서는 덫과 감지기 보유량, 설치 피드백, 추적 정보를 즉시 확인할 수 있도록 정리했고, 도망자 화면에서는 제한 시야와 지도 교환 흐름이 자연스럽게 이해되도록 구성했습니다.</p></section>
+            <div class="case-summary" aria-label="문제 해결과 핵심 성과">
+              <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>술래와 도망자의 목표가 달라, 각 역할에 필요한 정보와 행동 상태를 명확하게 구분해야 했습니다.</p></section>
+              <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>역할별 HUD, 장치 점검, 덫·감지기 설치 피드백과 도망자의 지도 교환 UI를 구현했습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>지도 전송량 약 84% 절감</strong>60클라이언트·30분 부하 테스트로 실시간 플레이 흐름을 검증했습니다.</p></section>
+            </div>
             <section><h4>실시간 구조</h4><p>모든 지도 정보와 플레이어 정보를 그대로 전송하면 역할별로 보이면 안 되는 정보까지 노출될 수 있었습니다. 서버는 원본 GameState를 유지하고, 클라이언트에는 역할별 StateView만 내려보내는 방식으로 구조를 나눴습니다. StateView에는 현재 플레이어가 볼 수 있는 타일, 엔티티, 장비 상태, 미니맵 정보만 포함해 HUD가 이 데이터만 기준으로 렌더링되도록 했습니다.</p></section>
             <figure class="detail-diagram dark">
               <img src="assets/diagrams/kkakkung-stateview-flow.svg" alt="까꿍 역할별 StateView 구조 다이어그램" loading="lazy" decoding="async" />
               <figcaption>서버 원본 상태를 역할별 공개 정보로 변환해 술래/도망자 화면에 필요한 정보만 전달했습니다.</figcaption>
             </figure>
-            <section><h4>핵심 성과</h4><p>지도 전송량을 약 84% 줄였고, 60클라이언트 30분 부하 테스트로 실시간 플레이 흐름을 검증했습니다.</p></section>
             <a class="detail-link" href="https://github.com/JJ-Yurim/kkakkung-project" target="_blank" rel="noreferrer">GitHub README</a>
           </div>
         </article>
 
         <article class="project-detail-panel" data-project="gotya">
+          <header class="detail-header">
+            <span class="detail-eyebrow">03 / PERSONALIZED CURATION</span>
+            <h3>GotYA</h3>
+            <p class="detail-intro">나의 취향에서 시작하는 영화·도서·문화생활 추천</p>
+            <dl class="detail-meta">
+              <div><dt>담당 역할</dt><dd>백엔드 · 데이터 모델링 · API</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.05 — 2026.06</dd></div>
+              <div><dt>팀 구성</dt><dd>2인 팀 프로젝트</dd></div>
+            </dl>
+          </header>
           <div class="detail-visual">
-            <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
             <img class="detail-slide-image" src="assets/captures/gotya-taste-question-a.png" alt="GotYA 취향 테스트 화면" loading="lazy" decoding="async" />
-            <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption" aria-live="polite">GotYA · 취향 테스트 질문</p>
+            <div class="slide-footer">
+              <p class="detail-slide-caption" aria-live="polite">GotYA · 취향 테스트 질문</p>
+              <div class="slide-controls" role="group" aria-label="프로젝트 화면 탐색">
+                <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
+                <span class="slide-counter" aria-live="polite">1 / 8</span>
+                <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
+              </div>
+            </div>
           </div>
           <div class="detail-copy">
-            <div class="detail-head">
-              <span>취향 기반 큐레이션</span>
-              <h3>GotYA</h3>
-              <p>2026.05 - 2026.06 · 2인 팀 프로젝트</p>
-            </div>
             <div class="detail-chips">
               <span class="stack-chip" data-logo="V">Vue 3</span>
               <span class="stack-chip" data-logo="P">Pinia</span>
@@ -277,46 +311,60 @@
               <span class="stack-chip" data-logo="DRF">DRF</span>
               <span class="stack-chip" data-logo="K">Kakao Map</span>
             </div>
-            <section><h4>프로젝트 소개</h4><p>13문항 취향 테스트 결과를 바탕으로 영화, 도서, 문화생활을 추천하는 큐레이션 서비스입니다. 테스트 결과 화면에서 취향 유형과 축별 점수를 보여주고, 추천 화면에서는 콘텐츠 유형별로 다시 탐색할 수 있게 구성했습니다.</p></section>
-            <section><h4>내가 맡은 역할</h4><p>백엔드 데이터 모델링, API 설계, 추천 흐름 구현을 맡았습니다. 취향 테스트 결과 저장, 추천 후보 조회, 콘텐츠 유형별 추천 응답, 문화지도 데이터 연결까지 하나의 사용자 흐름으로 이어지도록 API를 정리했습니다.</p></section>
+            <div class="case-summary" aria-label="문제 해결과 핵심 성과">
+              <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>콘텐츠 유형마다 데이터는 다르지만, 추천·좋아요·찜·후기는 같은 흐름으로 연결해야 했습니다.</p></section>
+              <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>공통 콘텐츠 모델과 상세 테이블을 분리하고, 취향 결과 저장부터 추천·문화지도까지 API를 설계했습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>27개 API · 22개 테이블</strong>여러 콘텐츠를 하나의 추천 흐름으로 연결하고, SSAFY 프로젝트 최우수상을 받았습니다.</p></section>
+            </div>
             <section><h4>데이터 구조</h4><p>영화, 도서, 문화생활은 필요한 필드가 다르지만 추천, 좋아요, 찜, 후기 구조는 함께 공유해야 했습니다. 공통으로 필요한 제목, 이미지, 유형, 추천 점수, 외부 링크는 ContentItem에 두고, 영화/도서/문화생활별 고유 필드는 상세 테이블로 분리했습니다. 사용자 상호작용은 ContentItem을 기준으로 연결해 콘텐츠 유형이 달라도 같은 추천 흐름을 사용할 수 있게 했습니다.</p></section>
             <figure class="detail-diagram">
               <img src="assets/diagrams/gotya-data-model.svg" alt="GotYA 콘텐츠 데이터 모델 다이어그램" loading="lazy" decoding="async" />
               <figcaption>공통 콘텐츠 모델을 기준으로 추천과 사용자 상호작용을 재사용하도록 설계했습니다.</figcaption>
             </figure>
-            <section><h4>핵심 성과</h4><p>27개 API와 22개 테이블을 구성했고, SSAFY 1학기 프로젝트에서 최우수상을 받았습니다.</p></section>
             <a class="detail-link" href="https://github.com/JJ-Yurim/GotYA-project" target="_blank" rel="noreferrer">GitHub README</a>
           </div>
         </article>
 
         <article class="project-detail-panel" data-project="portfolio">
+          <header class="detail-header">
+            <span class="detail-eyebrow">04 / PERSONAL PORTFOLIO</span>
+            <h3>개인 포트폴리오</h3>
+            <p class="detail-intro">프로젝트의 결과물과 문제 해결 과정을 함께 보여주는 웹 포트폴리오</p>
+            <dl class="detail-meta">
+              <div><dt>담당 역할</dt><dd>정보 설계 · 디자인 · 개발</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.10</dd></div>
+              <div><dt>팀 구성</dt><dd>개인 프로젝트</dd></div>
+            </dl>
+          </header>
           <div class="detail-visual">
-            <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
             <img class="detail-slide-image" src="assets/captures/portfolio-project-list-check-2.png" alt="개인 포트폴리오 프로젝트 목록 화면" loading="lazy" decoding="async" />
-            <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
-            <p class="detail-slide-caption" aria-live="polite">Portfolio · 프로젝트 목록</p>
+            <div class="slide-footer">
+              <p class="detail-slide-caption" aria-live="polite">Portfolio · 프로젝트 목록</p>
+              <div class="slide-controls" role="group" aria-label="프로젝트 화면 탐색">
+                <button class="slide-button prev" type="button" aria-label="이전 화면">‹</button>
+                <span class="slide-counter" aria-live="polite">1 / 3</span>
+                <button class="slide-button next" type="button" aria-label="다음 화면">›</button>
+              </div>
+            </div>
           </div>
           <div class="detail-copy">
-            <div class="detail-head">
-              <span>개인 웹 포트폴리오</span>
-              <h3>개인 포트폴리오</h3>
-              <p>2026.10 · 개인 프로젝트</p>
-            </div>
             <div class="detail-chips">
               <span class="stack-chip" data-logo="H">HTML</span>
               <span class="stack-chip" data-logo="C">CSS</span>
               <span class="stack-chip" data-logo="JS">JavaScript</span>
               <span class="stack-chip" data-logo="UI">Responsive UI</span>
             </div>
-            <section><h4>프로젝트 소개</h4><p>기존 PDF 포트폴리오를 웹사이트로 옮기며, 프로젝트 화면과 설명을 더 자연스럽게 읽을 수 있도록 구성한 개인 포트폴리오입니다. 방문자가 먼저 프로젝트 목록을 훑고, 관심 있는 항목을 선택해 상세 내용을 확인하는 흐름으로 설계했습니다.</p></section>
-            <section><h4>내가 맡은 역할</h4><p>전체 정보 구조, 색상, 타이포그래피, 프로젝트 카드, 상세 모달, 이미지 슬라이드 인터랙션을 직접 구성했습니다. 단순히 예쁘게 꾸미는 것보다 프로젝트별 문제, 해결, 결과가 드러나도록 문장과 화면 순서를 함께 정리했습니다.</p></section>
-            <section><h4>UI 구조</h4><p>문제는 기존 프로젝트 설명이 한 화면에 길게 쌓여 시선이 분산되고, 프로젝트 화면도 충분히 크게 보이지 않는다는 점이었습니다. 이를 해결하기 위해 메인 영역은 카드 목록으로 줄이고, 상세 정보는 모달 안에서 읽도록 분리했습니다. 모달은 화면 크기와 관계없이 대표 이미지, 프로젝트 정보, 기술스택, 설명 순서로 흐르게 만들었고, 이미지는 좌우 버튼으로 넘기도록 구성했습니다. 결과적으로 첫 화면은 가벼워지고 상세 화면은 프로젝트 하나에 집중해서 읽기 쉬운 구조가 되었습니다.</p></section>
-            <section><h4>핵심 성과</h4><p>정적 웹사이트만으로도 프로젝트 탐색, 상세 설명, 이미지 슬라이드, 반응형 레이아웃을 구현했습니다. PDF보다 업데이트가 쉽고, 채용 담당자가 프로젝트별 강점을 빠르게 확인할 수 있는 형태로 개선했습니다.</p></section>
+            <div class="case-summary" aria-label="문제 해결과 핵심 성과">
+              <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>PDF에 길게 쌓인 설명만으로는 프로젝트의 화면과 본인 기여를 빠르게 파악하기 어려웠습니다.</p></section>
+              <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>정보 구조와 디자인을 정리하고, 프로젝트 카드·상세 모달·슬라이드와 키보드 탐색을 구현했습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>4개 프로젝트 · 반응형 UI</strong>실제 화면과 기술적 의사결정을 함께 읽고, 같은 URL에서 최신 내용을 확인할 수 있습니다.</p></section>
+            </div>
+            <section><h4>UI 구조</h4><p>카드에서는 프로젝트와 성과를 빠르게 훑고, 상세 모달에서는 하나의 프로젝트에 집중하도록 나눴습니다. 프로젝트명·역할을 먼저 보여준 뒤 실제 화면과 문제 해결 과정을 배치했습니다. 슬라이드는 전체 장수와 현재 위치를 표시하고, 이미지와 조작부를 분리해 작은 화면에서도 내용을 가리지 않도록 구성했습니다.</p></section>
             <a class="detail-link" href="#top">사이트 위로 이동</a>
           </div>
         </article>
       </div>
     </div>
-    <script src="script.js?v=20261006-15"></script>
+    <script src="script.js?v=20261006-18"></script>
   </body>
 </html>
