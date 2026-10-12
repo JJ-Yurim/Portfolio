@@ -31,6 +31,10 @@ const projectSlides = {
     { src: 'assets/captures/gotya-culture-map.png', alt: 'GotYA 문화지도 화면', caption: 'GotYA · 문화지도' },
     { src: 'assets/diagrams/gotya-data-model.svg', alt: 'GotYA 콘텐츠 데이터 모델 다이어그램', caption: 'GotYA · 데이터 모델' },
   ],
+  homekeeper: [
+    { src: 'assets/diagrams/homekeeper-risk-map.svg', alt: '홈키퍼 서울 동별 위험도 시범 분석 점 지도', caption: 'HomeKeeper · 서울 동별 시범 분석 시각화' },
+    { src: 'assets/diagrams/homekeeper-data-flow.svg', alt: '홈키퍼 외부 데이터 수집부터 지도 시각화까지의 분석 흐름', caption: 'HomeKeeper · 데이터 수집·정규화·모델 비교 흐름' },
+  ],
   portfolio: [
     { src: 'assets/captures/portfolio-project-list-check-2.png', alt: '개인 포트폴리오 프로젝트 목록 화면', caption: 'Portfolio · 프로젝트 목록' },
     { src: 'assets/captures/portfolio-project-modal-check-2.png', alt: '개인 포트폴리오 프로젝트 상세 모달 화면', caption: 'Portfolio · 상세 모달' },

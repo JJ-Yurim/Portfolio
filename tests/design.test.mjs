@@ -8,7 +8,7 @@ const read = file => readFile(new URL(`../${file}`, import.meta.url), 'utf8');
 test('each project identifies itself and its role before its image gallery', async () => {
   const html = await read('index.html');
   const panels = [...html.matchAll(/<article class="project-detail-panel"[^>]*>([\s\S]*?)<\/article>/g)];
-  assert.equal(panels.length, 4);
+  assert.equal(panels.length, 5);
   for (const [, panel] of panels) {
     const header = panel.match(/<header class="detail-header">([\s\S]*?)<\/header>/);
     assert.ok(header, 'project needs an introductory header');
@@ -25,7 +25,7 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
     classList: { add() {}, remove() {}, toggle() {}, contains: () => true },
     setAttribute() {}, addEventListener() {}, focus() {}, scrollTop: 99 });
   const selectors = new Map();
-  const panels = new Map(['itdam', 'kkakkung', 'gotya', 'portfolio'].map(id => {
+  const panels = new Map(['itdam', 'kkakkung', 'gotya', 'homekeeper', 'portfolio'].map(id => {
     const children = new Map(['.detail-slide-image', '.detail-slide-caption', '.slide-counter'].map(s => [s, element()]));
     const panel = { ...element(), dataset: { project: id }, querySelector: s => children.get(s), children };
     selectors.set(`.project-detail-panel[data-project="${id}"]`, panel);
@@ -59,6 +59,10 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
   assert.equal(counter('kkakkung'), '1 / 4');
   run("openProject('gotya')");
   assert.equal(counter('gotya'), '1 / 8');
+  run("openProject('homekeeper')");
+  assert.equal(counter('homekeeper'), '1 / 2');
+  run("updateSlide('homekeeper', 1)");
+  assert.equal(counter('homekeeper'), '2 / 2');
   run("openProject('itdam')");
   assert.equal(counter('itdam'), '1 / 6');
   run("openProject('portfolio')");

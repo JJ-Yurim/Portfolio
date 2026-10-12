@@ -49,6 +49,7 @@ body { background: #fff; letter-spacing: -.025em; }
 .project-tile[data-project="itdam"] img { background: #f0edf7; }
 .project-tile[data-project="kkakkung"] img { background: #e8e6e1; }
 .project-tile[data-project="gotya"] img { background: #edf4f5; }
+.project-tile[data-project="homekeeper"] img { background: #edf0f7; }
 .project-tile:hover img { background: #e9edf5; }
 .tile-badge, .tile-badge.muted { margin: 0 0 10px; padding: 0; background: none; border-radius: 0; color: var(--muted); font-size: 11px; font-weight: 400; letter-spacing: .04em; }
 .project-tile > strong { padding-right: 44px; margin-bottom: 10px; font-size: 30px; font-weight: 600; letter-spacing: -.045em; }

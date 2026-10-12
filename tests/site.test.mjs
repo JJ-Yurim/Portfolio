@@ -119,9 +119,29 @@ test('every project slide asset exists and modal images never crop content', asy
   const [js, css] = await Promise.all([read('script.js'), read('styles.css')]);
   const slideSources = [...js.matchAll(/src: '([^']+)'/g)].map((match) => match[1]);
 
-  assert.equal(slideSources.length, 21);
+  assert.equal(slideSources.length, 23);
   await Promise.all(slideSources.map((source) => access(new URL(`../${source}`, import.meta.url))));
   assert.match(css, /\.detail-slide-image\s*{[^}]*object-fit:\s*contain/s);
+});
+
+test('HomeKeeper exposes the team lead data role and the pilot-model limitation', async () => {
+  const html = await read('index.html');
+  const js = await read('script.js');
+
+  assert.match(html, /data-project="homekeeper"/);
+  assert.match(html, /외부 데이터 수집/);
+  assert.match(html, /정제·정규화/);
+  assert.match(html, /동 단위/);
+  assert.match(html, /시범 분석/);
+  assert.match(js, /homekeeper: \[/);
+});
+
+test('HomeKeeper map preview is a static asset sourced from project data', async () => {
+  const map = await read('assets/diagrams/homekeeper-risk-map.svg');
+  const points = [...map.matchAll(/data-point="\d+"/g)];
+
+  assert.equal(points.length, 467);
+  assert.doesNotMatch(map, /<script|(?:href|src)=["']https?:\/\//);
 });
 
 test('GotYA data relationships expose direction on every curved connector', async () => {

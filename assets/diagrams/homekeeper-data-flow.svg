@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">홈키퍼 데이터 분석 흐름</title>
+  <desc id="desc">외부 데이터 수집, 지역 단위 맞춤과 정규화, 모델 비교, 동별 위험도 산출, 지도와 대시보드 시각화로 이어지는 시범 분석 과정</desc>
+  <rect width="1200" height="720" rx="28" fill="#f3f5fa"/>
+  <text x="56" y="77" fill="#17213a" font-family="IBM Plex Sans KR, Malgun Gothic, sans-serif" font-size="34" font-weight="700">HomeKeeper · 데이터가 지도로 이어지는 과정</text>
+  <text x="57" y="113" fill="#657391" font-family="IBM Plex Sans KR, Malgun Gothic, sans-serif" font-size="18">팀장으로서 외부 데이터 수집·정제·정규화와 모델링을 담당했습니다.</text>
+  <path d="M125 306H1070" fill="none" stroke="#b8c5de" stroke-width="7" stroke-linecap="round"/>
+  <g font-family="IBM Plex Sans KR, Malgun Gothic, sans-serif">
+    <g transform="translate(48 187)">
+      <rect width="208" height="305" rx="18" fill="#fff" stroke="#d8e0ef"/>
+      <circle cx="31" cy="39" r="18" fill="#5471cb"/><text x="25" y="46" fill="#fff" font-size="18" font-weight="700">1</text>
+      <text x="23" y="101" fill="#17213a" font-size="20" font-weight="700">외부 데이터 수집</text>
+      <text x="23" y="152" fill="#586987" font-size="17">전세가율·신축빌라 비율</text>
+      <text x="23" y="183" fill="#586987" font-size="17">근저당·경매 등</text>
+      <text x="23" y="248" fill="#4662ad" font-size="15">공공 자료와 외부 지표</text>
+    </g>
+    <g transform="translate(272 187)">
+      <rect width="208" height="305" rx="18" fill="#fff" stroke="#d8e0ef"/>
+      <circle cx="31" cy="39" r="18" fill="#5471cb"/><text x="25" y="46" fill="#fff" font-size="18" font-weight="700">2</text>
+      <text x="23" y="101" fill="#17213a" font-size="24" font-weight="700">정제·정규화</text>
+      <text x="23" y="152" fill="#586987" font-size="17">행정구역 단위 맞춤</text>
+      <text x="23" y="183" fill="#586987" font-size="17">지표 스케일 조정</text>
+      <text x="23" y="248" fill="#4662ad" font-size="15">분석 가능한 표로 통합</text>
+    </g>
+    <g transform="translate(496 187)">
+      <rect width="208" height="305" rx="18" fill="#fff" stroke="#d8e0ef"/>
+      <circle cx="31" cy="39" r="18" fill="#5471cb"/><text x="25" y="46" fill="#fff" font-size="18" font-weight="700">3</text>
+      <text x="23" y="101" fill="#17213a" font-size="24" font-weight="700">모델 비교</text>
+      <text x="23" y="152" fill="#586987" font-size="17">선형·트리 기반</text>
+      <text x="23" y="183" fill="#586987" font-size="17">예측 모델 비교</text>
+      <text x="23" y="248" fill="#4662ad" font-size="15">결과와 한계 함께 검토</text>
+    </g>
+    <g transform="translate(720 187)">
+      <rect width="208" height="305" rx="18" fill="#fff" stroke="#d8e0ef"/>
+      <circle cx="31" cy="39" r="18" fill="#5471cb"/><text x="25" y="46" fill="#fff" font-size="18" font-weight="700">4</text>
+      <text x="23" y="101" fill="#17213a" font-size="24" font-weight="700">위험도 지표</text>
+      <text x="23" y="152" fill="#586987" font-size="17">동별 시범 점수</text>
+      <text x="23" y="183" fill="#586987" font-size="17">등급별 분류</text>
+      <text x="23" y="248" fill="#4662ad" font-size="15">개별 계약 판단과 구분</text>
+    </g>
+    <g transform="translate(944 187)">
+      <rect width="208" height="305" rx="18" fill="#1f3157"/>
+      <circle cx="31" cy="39" r="18" fill="#8fa8ed"/><text x="25" y="46" fill="#15264b" font-size="18" font-weight="700">5</text>
+      <text x="23" y="101" fill="#fff" font-size="24" font-weight="700">지도·대시보드</text>
+      <text x="23" y="152" fill="#d7e0f2" font-size="17">지역별 차이를</text>
+      <text x="23" y="183" fill="#d7e0f2" font-size="17">한눈에 확인</text>
+      <text x="23" y="248" fill="#d7e0f2" font-size="15">팀 웹서비스 시각화</text>
+    </g>
+  </g>
+  <rect x="48" y="551" width="1104" height="102" rx="17" fill="#e7ebf5"/>
+  <text x="73" y="590" fill="#263a68" font-family="IBM Plex Sans KR, Malgun Gothic, sans-serif" font-size="17" font-weight="700">데이터 해석의 한계</text>
+  <text x="73" y="623" fill="#526380" font-family="IBM Plex Sans KR, Malgun Gothic, sans-serif" font-size="16">일부 구 단위 자료는 동 단위로 추정·배분했고, 피해 신고의 누락과 시점 차이도 있어 결과를 시범 분석으로 제시했습니다.</text>
+</svg>
