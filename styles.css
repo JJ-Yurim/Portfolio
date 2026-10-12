@@ -290,6 +290,13 @@ a:focus-visible {
   object-position: top center;
   background: #eef4ff;
 }
+.project-tile img.homekeeper-cover { margin-bottom: 6px; }
+.tile-map-credit {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
 .study-visual {
   display: grid;
   place-items: center;
@@ -745,6 +752,13 @@ a:focus-visible {
 .detail-slide-image.diagram-slide {
   object-fit: contain;
   background: #f7f8fb;
+}
+.detail-capture-note {
+  margin: 0;
+  padding: 0 22px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 .slide-button {
   position: static;

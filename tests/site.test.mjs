@@ -119,7 +119,7 @@ test('every project slide asset exists and modal images never crop content', asy
   const [js, css] = await Promise.all([read('script.js'), read('styles.css')]);
   const slideSources = [...js.matchAll(/src: '([^']+)'/g)].map((match) => match[1]);
 
-  assert.equal(slideSources.length, 23);
+  assert.equal(slideSources.length, 24);
   await Promise.all(slideSources.map((source) => access(new URL(`../${source}`, import.meta.url))));
   assert.match(css, /\.detail-slide-image\s*{[^}]*object-fit:\s*contain/s);
 });
@@ -142,6 +142,24 @@ test('HomeKeeper map preview is a static asset sourced from project data', async
 
   assert.equal(points.length, 467);
   assert.doesNotMatch(map, /<script|(?:href|src)=["']https?:\/\//);
+});
+
+test('HomeKeeper cover and gallery show the local map capture with an honest provenance note', async () => {
+  const html = await read('index.html');
+  const homekeeperCard = html.match(/<button class="project-tile"[^>]*data-project="homekeeper"[\s\S]*?<\/button>/)?.[0];
+  const homekeeperPanel = html.match(/<article class="project-detail-panel" data-project="homekeeper">[\s\S]*?<\/article>/)?.[0];
+
+  assert.ok(homekeeperCard);
+  assert.ok(homekeeperPanel);
+  assert.match(homekeeperCard, /src="assets\/captures\/homekeeper-risk-map-overview\.png"/);
+  assert.match(homekeeperCard, /class="tile-map-credit"[^>]*>지도 배경 © OpenStreetMap contributors/);
+  assert.match(homekeeperPanel, /src="assets\/captures\/homekeeper-risk-map-overview\.png"/);
+  assert.match(homekeeperPanel, /로컬에서 재실행한 시범 분석 지도/);
+  assert.match(homekeeperPanel, /OpenStreetMap contributors/);
+  assert.match(await read('script.js'), /caption: 'HomeKeeper · 로컬 재실행 시범 분석 지도 전체 화면'/);
+  assert.match(await read('script.js'), /신림동 위험도 매우 높음, 점수 100점, 전체 1위/);
+  await access(new URL('../assets/captures/homekeeper-risk-map-overview.png', import.meta.url));
+  await access(new URL('../assets/captures/homekeeper-risk-popup.png', import.meta.url));
 });
 
 test('GotYA data relationships expose direction on every curved connector', async () => {

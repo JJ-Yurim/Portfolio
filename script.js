@@ -32,7 +32,8 @@ const projectSlides = {
     { src: 'assets/diagrams/gotya-data-model.svg', alt: 'GotYA 콘텐츠 데이터 모델 다이어그램', caption: 'GotYA · 데이터 모델' },
   ],
   homekeeper: [
-    { src: 'assets/diagrams/homekeeper-risk-map.svg', alt: '홈키퍼 서울 동별 위험도 시범 분석 점 지도', caption: 'HomeKeeper · 서울 동별 시범 분석 시각화' },
+    { src: 'assets/captures/homekeeper-risk-map-overview.png', alt: '로컬에서 재실행한 홈키퍼 서울 동별 위험도 시범 분석 지도 전체 화면', caption: 'HomeKeeper · 로컬 재실행 시범 분석 지도 전체 화면' },
+    { src: 'assets/captures/homekeeper-risk-popup.png', alt: '로컬에서 재실행한 홈키퍼 지도. 신림동 위험도 매우 높음, 점수 100점, 전체 1위로 표시된 팝업 화면', caption: 'HomeKeeper · 로컬 재실행 지도 지역별 상세 정보' },
     { src: 'assets/diagrams/homekeeper-data-flow.svg', alt: '홈키퍼 외부 데이터 수집부터 지도 시각화까지의 분석 흐름', caption: 'HomeKeeper · 데이터 수집·정규화·모델 비교 흐름' },
   ],
   portfolio: [

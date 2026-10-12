@@ -60,9 +60,14 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
   run("openProject('gotya')");
   assert.equal(counter('gotya'), '1 / 8');
   run("openProject('homekeeper')");
-  assert.equal(counter('homekeeper'), '1 / 2');
+  assert.equal(counter('homekeeper'), '1 / 3');
+  assert.match(panels.get('homekeeper').children.get('.detail-slide-image').src, /homekeeper-risk-map-overview\.png$/);
   run("updateSlide('homekeeper', 1)");
-  assert.equal(counter('homekeeper'), '2 / 2');
+  assert.equal(counter('homekeeper'), '2 / 3');
+  assert.match(panels.get('homekeeper').children.get('.detail-slide-image').src, /homekeeper-risk-popup\.png$/);
+  run("updateSlide('homekeeper', 1)");
+  assert.equal(counter('homekeeper'), '3 / 3');
+  assert.match(panels.get('homekeeper').children.get('.detail-slide-image').src, /homekeeper-data-flow\.svg$/);
   run("openProject('itdam')");
   assert.equal(counter('itdam'), '1 / 6');
   run("openProject('portfolio')");
