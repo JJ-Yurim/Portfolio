@@ -156,6 +156,8 @@ test('HomeKeeper cover and gallery show the local map capture with an honest pro
   assert.match(homekeeperPanel, /src="assets\/captures\/homekeeper-risk-map-overview\.png"/);
   assert.match(homekeeperPanel, /로컬에서 재실행한 시범 분석 지도/);
   assert.match(homekeeperPanel, /OpenStreetMap contributors/);
+  assert.match(html, /href="styles\.css\?v=20261012-1"/);
+  assert.match(html, /src="script\.js\?v=20261012-1"/);
   assert.match(await read('script.js'), /caption: 'HomeKeeper · 로컬 재실행 시범 분석 지도 전체 화면'/);
   assert.match(await read('script.js'), /신림동 위험도 매우 높음, 점수 100점, 전체 1위/);
   await access(new URL('../assets/captures/homekeeper-risk-map-overview.png', import.meta.url));
