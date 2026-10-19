@@ -30,7 +30,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20261012-1" />
-    <link rel="stylesheet" href="editorial.css?v=20261006-1" />
+    <link rel="stylesheet" href="editorial.css?v=20261019-1" />
   </head>
   <body>
     <header class="site-header">
@@ -73,7 +73,7 @@
         <div class="section-title reveal">
           <span class="title-icon">⌁</span>
           <span class="section-index">01 / SELECTED WORK</span>
-          <h2>프로젝트<span class="section-count">05</span></h2>
+          <h2>프로젝트<span class="section-count">06</span></h2>
           <p class="section-copy">
             직접 만든 화면과, 그 안에서 해결한 문제들.
           </p>
@@ -84,7 +84,7 @@
             <span class="tile-badge">Main Project</span>
             <strong>잇담</strong>
             <p>매일 다섯 단어로 문장을 쓰고 AI 평가로 보스 레이드에 도전하는 창작 게임 서비스</p>
-            <span class="tile-outcome">19+ 화면 · 28개 테스트 · 우수상</span>
+            <span class="tile-outcome">저장 중 추가 입력 보존 · 19+ 화면 · 우수상</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="TS">TypeScript</span>
@@ -97,7 +97,7 @@
             <span class="tile-badge">Realtime Game</span>
             <strong>까꿍</strong>
             <p>웹캠 동작으로 조작하는 실시간 3D 멀티플레이 숨바꼭질 게임</p>
-            <span class="tile-outcome">지도 전송량 84% 절감 · 60클라이언트 30분 검증</span>
+            <span class="tile-outcome">역할별 HUD·지도 교환 UI · 팀 측정 전송량 84% 절감</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="3">Three.js</span>
@@ -132,12 +132,20 @@
               <span class="stack-chip" data-logo="BI">Power BI</span>
             </span>
           </button>
+          <button class="project-tile" type="button" data-project="axcore" aria-label="에이엑스코어 진행 중 프로젝트 자세히 보기">
+            <img src="assets/diagrams/axcore-ontology-flow.svg" alt="에이엑스코어 프로젝트의 AI 제안, 데이터 검증, 사람 검토, 승인 반영 설계 흐름" loading="lazy" decoding="async" />
+            <span class="tile-badge in-progress">진행 중 · 분석 및 설계</span>
+            <strong>에이엑스코어 연계</strong>
+            <p>서로 다른 업무 데이터의 객체와 관계를 연결하고, AI 제안을 사람이 검토하는 온톨로지 구축·운영 지원 플랫폼</p>
+            <span class="tile-outcome">분석·시나리오 초안 정리 / 매핑·정합성 검증 구현 예정</span>
+            <span class="tile-tags"><span class="stack-chip" data-logo="BE">Backend B</span><span class="stack-chip" data-logo="O">Ontology</span><span class="stack-chip" data-logo="H">HITL</span></span>
+          </button>
           <button class="project-tile" type="button" data-project="portfolio" aria-label="개인 포트폴리오 웹사이트 자세히 보기">
             <img src="assets/captures/portfolio-project-list-check-2.png" alt="개인 포트폴리오 프로젝트 목록 화면" loading="lazy" decoding="async" />
             <span class="tile-badge muted">Personal Portfolio</span>
             <strong>개인 포트폴리오</strong>
             <p>프로젝트 경험과 기술적 의사결정을 한눈에 보여주기 위해 직접 설계한 반응형 포트폴리오 웹사이트</p>
-            <span class="tile-outcome">5개 프로젝트 · 반응형 UI · 접근성 개선</span>
+            <span class="tile-outcome">6개 프로젝트 · 반응형 UI · 접근성 개선</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="H">HTML</span>
               <span class="stack-chip" data-logo="C">CSS</span>
@@ -240,14 +248,20 @@
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>자동 저장과 수동 저장이 겹칠 때, 마지막 입력을 잃지 않는 작성 경험이 필요했습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>일정·이슈를 관리하고 인증부터 문장 작성, 도서관, 서고, 레이드까지 주요 화면과 저장 상태 흐름을 구현했습니다.</p></section>
-              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>19+ 화면 · 28개 테스트</strong>주요 저장 흐름을 검증하고, SSAFY 프로젝트 우수상을 받았습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>저장 중 추가 입력까지 보존</strong>초기 자동·수동 저장 병행 단계에서 중복 요청과 입력 유실을 방지했습니다. 19+ 화면을 구현하고 저장소에 정리한 28개 테스트와 함께 주요 흐름을 검증했습니다. 팀은 SSAFY 프로젝트 우수상을 받았습니다.</p></section>
             </div>
             <section><h4>상태 구조</h4><p>자동 저장과 수동 저장이 겹치면 같은 초안이 중복 저장되거나 마지막 입력이 누락될 수 있었습니다. 이를 막기 위해 작성 입력값, 저장 진행 여부, 대기 중인 최신 입력, 서버 반영 결과를 분리했습니다. 저장 중 새 입력이 들어오면 요청을 즉시 겹쳐 보내지 않고 pending 값으로 보관한 뒤 현재 요청이 끝난 다음 한 번 더 저장하도록 구성했습니다.</p></section>
+            <section><h4>검증 사례</h4><p>첫 저장 응답을 0.4초 늦추고 ‘골목’을 저장하는 동안 ‘윤슬’을 추가하는 상황을 재현했습니다. 테스트는 생성 요청 1회, 수정 요청 1회와 마지막 전송 내용 ‘골목 윤슬’을 확인합니다. 같은 내용의 반복 저장은 별도 사례에서 생성 1회·수정 0회로 확인했습니다.</p></section>
+            <section><h4>최종 화면의 변화</h4><p>이후 문장 작성 화면은 사용자가 ‘미평가 문장 저장’을 눌러 저장하는 방식으로 바뀌었습니다. 현재 공개 코드의 화면 테스트는 입력 후 1.6초 동안 생성 요청이 0회이고, 저장 버튼을 누르면 1회가 되는지 확인합니다. 위 동시 저장 사례는 초기 구현을 개선한 경험입니다.</p></section>
             <figure class="detail-diagram">
               <img src="assets/diagrams/itdam-state-flow.svg" alt="잇담 저장 상태 구조 다이어그램" loading="lazy" decoding="async" />
               <figcaption>입력 상태와 저장 상태를 분리해 마지막 문장이 안정적으로 서버에 반영되도록 만든 흐름입니다.</figcaption>
             </figure>
-            <a class="detail-link" href="https://github.com/JJ-Yurim/itdam-project" target="_blank" rel="noreferrer">GitHub README</a>
+            <div class="evidence-links" aria-label="잇담 구현 근거">
+              <a class="detail-link" href="https://github.com/JJ-Yurim/itdam-project" target="_blank" rel="noreferrer">GitHub README</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/itdam-project/blob/ca438efd7b155b1d757a9e27930354900014b658/frontend/src/features/sentences/components/SentenceDraftEditor.tsx#L166-L235" target="_blank" rel="noreferrer">저장 중복 방지 코드</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/itdam-project/blob/ca438efd7b155b1d757a9e27930354900014b658/frontend/src/pages/SentenceCreatePage.test.tsx#L57-L116" target="_blank" rel="noreferrer">최종 수동 저장 테스트</a>
+            </div>
           </div>
         </article>
 
@@ -284,14 +298,22 @@
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>술래와 도망자의 목표가 달라, 각 역할에 필요한 정보와 행동 상태를 명확하게 구분해야 했습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>역할별 HUD, 장치 점검, 덫·감지기 설치 피드백과 도망자의 지도 교환 UI를 구현했습니다.</p></section>
-              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>지도 전송량 약 84% 절감</strong>60클라이언트·30분 부하 테스트로 실시간 플레이 흐름을 검증했습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>역할별 정보와 조작 피드백 구현</strong>술래·도망자에게 필요한 HUD와 장비·지도 교환 UI를 구현했습니다. 팀의 전송 최적화 측정에서는 지도 데이터를 포함한 JSON 상태 전송량을 약 84% 절감했습니다.</p></section>
             </div>
             <section><h4>실시간 구조</h4><p>모든 지도 정보와 플레이어 정보를 그대로 전송하면 역할별로 보이면 안 되는 정보까지 노출될 수 있었습니다. 서버는 원본 GameState를 유지하고, 클라이언트에는 역할별 StateView만 내려보내는 방식으로 구조를 나눴습니다. StateView에는 현재 플레이어가 볼 수 있는 타일, 엔티티, 장비 상태, 미니맵 정보만 포함해 HUD가 이 데이터만 기준으로 렌더링되도록 했습니다.</p></section>
+            <section><h4>본인 기여와 팀 성과</h4><p>본인 담당은 역할별 HUD, 장치 점검, 장비 설치 피드백, 지도 교환 UI와 서버 상태의 화면 연계입니다. 서버 투영 구조와 전송량·부하 수치는 팀 구현 및 검증 결과로 구분합니다.</p></section>
+            <section><h4>전송 최적화와 측정</h4><p>누적 지도는 변경 시에만 보내고, 수신 측은 knowledgeRevision으로 보관 중인 정보와의 일치를 확인합니다. 버전이 맞지 않으면 재동기화합니다. maze-v1·6명·3,600Tick의 코어·투영 측정에서 JSON 전송량은 356 → 56.8 KB/s로 줄었습니다. 영상·음성과 네트워크 부가 비용을 포함한 전체 서비스 대역폭 수치는 아닙니다.</p></section>
+            <section><h4>부하 검증 범위</h4><p>팀 운영 문서에는 게임 단독 60클라이언트·30분 시험 통과가 기록돼 있습니다. 실제 영상·음성을 포함한 단계별 부하 시험은 해당 기록에서 미실행으로 구분돼 있어, 실제 사용자 60명의 미디어 동시 접속 검증과 구별합니다.</p></section>
             <figure class="detail-diagram dark">
               <img src="assets/diagrams/kkakkung-stateview-flow.svg" alt="까꿍 역할별 StateView 구조 다이어그램" loading="lazy" decoding="async" />
               <figcaption>서버 원본 상태를 역할별 공개 정보로 변환해 술래/도망자 화면에 필요한 정보만 전달했습니다.</figcaption>
             </figure>
-            <a class="detail-link" href="https://github.com/JJ-Yurim/kkakkung-project" target="_blank" rel="noreferrer">GitHub README</a>
+            <div class="evidence-links" aria-label="까꿍 구현과 측정 근거">
+              <a class="detail-link" href="https://github.com/JJ-Yurim/kkakkung-project" target="_blank" rel="noreferrer">GitHub README</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/kkakkung-project/blob/5caffc160a955a7b272dc8e616a10c8d99d25837/apps/web/src/features/game/flow/GameHud.tsx" target="_blank" rel="noreferrer">HUD 구현 코드</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/kkakkung-project/blob/5caffc160a955a7b272dc8e616a10c8d99d25837/docs/spec/decisions.md#L129-L141" target="_blank" rel="noreferrer">전송 최적화 측정 기록</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/kkakkung-project/blob/5caffc160a955a7b272dc8e616a10c8d99d25837/docs/operations.md#L32" target="_blank" rel="noreferrer">부하 검증 범위</a>
+            </div>
           </div>
         </article>
 
@@ -331,11 +353,16 @@
               <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>27개 API · 22개 테이블</strong>여러 콘텐츠를 하나의 추천 흐름으로 연결하고, SSAFY 프로젝트 최우수상을 받았습니다.</p></section>
             </div>
             <section><h4>데이터 구조</h4><p>영화, 도서, 문화생활은 필요한 필드가 다르지만 추천, 좋아요, 찜, 후기 구조는 함께 공유해야 했습니다. 공통으로 필요한 제목, 이미지, 유형, 추천 점수, 외부 링크는 ContentItem에 두고, 영화/도서/문화생활별 고유 필드는 상세 테이블로 분리했습니다. 사용자 상호작용은 ContentItem을 기준으로 연결해 콘텐츠 유형이 달라도 같은 추천 흐름을 사용할 수 있게 했습니다.</p></section>
+            <section><h4>설계 선택과 제약</h4><p>유형별 테이블만 사용하면 찜·후기에서 콘텐츠 유형마다 참조 경로를 나눠야 하고, 모든 필드를 한 테이블에 모으면 유형별로 사용하지 않는 필드가 늘어납니다. 공통 식별자는 ContentItem으로 통일하고 상세 정보를 분리해 공통 상호작용을 재사용했습니다. 대신 상세 조회에는 연결 조회가 필요하고, 콘텐츠 유형과 상세 데이터의 일치도 함께 관리해야 합니다.</p></section>
             <figure class="detail-diagram">
               <img src="assets/diagrams/gotya-data-model.svg" alt="GotYA 콘텐츠 데이터 모델 다이어그램" loading="lazy" decoding="async" />
               <figcaption>공통 콘텐츠 모델을 기준으로 추천과 사용자 상호작용을 재사용하도록 설계했습니다.</figcaption>
             </figure>
-            <a class="detail-link" href="https://github.com/JJ-Yurim/GotYA-project" target="_blank" rel="noreferrer">GitHub README</a>
+            <div class="evidence-links" aria-label="GotYA 데이터 설계 근거">
+              <a class="detail-link" href="https://github.com/JJ-Yurim/GotYA-project" target="_blank" rel="noreferrer">GitHub README</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/GotYA-project/blob/ea63f2b60b46835c5c5b83454463b9b52348b6ee/backend/tastes/models.py#L98-L238" target="_blank" rel="noreferrer">공통 콘텐츠·찜 모델</a>
+              <a class="detail-link" href="https://github.com/JJ-Yurim/GotYA-project/blob/ea63f2b60b46835c5c5b83454463b9b52348b6ee/backend/movies/models.py#L6" target="_blank" rel="noreferrer">영화 상세 모델</a>
+            </div>
           </div>
         </article>
 
@@ -383,9 +410,36 @@
           </div>
         </article>
 
+        <article class="project-detail-panel" data-project="axcore">
+          <header class="detail-header">
+            <span class="detail-eyebrow">05 / ONTOLOGY · IN PROGRESS</span>
+            <h3>에이엑스코어 연계</h3>
+            <p class="detail-intro">AI 제안을 검증하고 사람이 확정하는 온톨로지 구축·운영 지원 플랫폼</p>
+            <p class="project-status">진행 중 · 요구사항 분석 및 설계 <span>2026.10.19 기준</span></p>
+            <dl class="detail-meta">
+              <div><dt>담당 역할</dt><dd>Backend B · 식별자 매핑·정합성 검증·검토 결과 반영 예정</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.10 — 현재</dd></div>
+              <div><dt>팀 구성</dt><dd>6인 팀 · SSAFY 자율 프로젝트</dd></div>
+            </dl>
+          </header>
+          <div class="detail-visual">
+            <img class="detail-slide-image" src="assets/diagrams/axcore-ontology-flow.svg" alt="AI 제안부터 데이터 검증, 사람의 검토, 승인 반영까지의 구현 예정 흐름" loading="lazy" decoding="async" />
+            <div class="slide-footer"><p class="detail-slide-caption" aria-live="polite">설계 흐름도 · 구현 예정 구조</p><span class="slide-counter" aria-live="polite">1 / 1</span></div>
+          </div>
+          <div class="detail-copy">
+            <div class="detail-chips"><span class="stack-chip" data-logo="BE">Backend B</span><span class="stack-chip" data-logo="O">Ontology</span><span class="stack-chip" data-logo="H">Human-in-the-loop</span></div>
+            <div class="case-summary" aria-label="프로젝트 목적과 완료·예정 구분">
+              <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>ERP·MES처럼 서로 다른 시스템의 데이터는 식별자와 업무 의미가 달라 바로 연결하기 어렵습니다. AI가 제안한 객체·관계를 실제 데이터와 사람의 판단으로 검증하는 구축·운영 흐름을 기획하고 있습니다.</p></section>
+              <section><span class="case-label">02 / COMPLETED</span><h4>완료한 내용</h4><div class="progress-copy"><span class="progress-label completed">기획·분석 산출물</span><ul><li>제공된 ERP·MES 예시 데이터의 식별자·참조 관계와 미매칭 사례 검토</li><li>신규 구축·연결 품질 관리·모델 확장·활용 검증의 사용자 시나리오 초안 정리</li><li>Backend B의 매핑·정합성 검증·사람 검토 결과 반영 담당 범위 정리</li></ul><p>현재까지 정리한 분석과 설계 초안이며, API·검증 엔진 구현 완료를 의미하지 않습니다.</p></div></section>
+              <section><span class="case-label">03 / PLANNED</span><h4>예정인 내용</h4><div class="progress-copy"><span class="progress-label planned">개발 및 검증 예정</span><ul><li>객체·링크 인스턴스 조회와 ERP·MES 식별자 매핑 구현</li><li>미매칭·중복·참조 대상 누락을 구분하는 정합성 검증과 테스트</li><li>사람의 승인·수정·반려 결과를 저장하고 승인된 변경의 운영 반영 연계</li><li>AI 담당자와 합성 데이터·정답셋을 보강하고 변경 후 재검증</li></ul></div></section>
+            </div>
+            <section><h4>검증할 기준</h4><p>식별자 형식이 맞더라도 대상 데이터가 없으면 연결을 보류하고, 오류 유형과 원본 근거를 보여주는 흐름을 설계하고 있습니다. 사람의 승인 여부와 실제 반영 성공 여부를 구분하고, 변경 후 기존 정상 연결이 유지되는지 확인할 예정입니다.</p></section>
+          </div>
+        </article>
+
         <article class="project-detail-panel" data-project="portfolio">
           <header class="detail-header">
-            <span class="detail-eyebrow">05 / PERSONAL PORTFOLIO</span>
+            <span class="detail-eyebrow">06 / PERSONAL PORTFOLIO</span>
             <h3>개인 포트폴리오</h3>
             <p class="detail-intro">프로젝트의 결과물과 문제 해결 과정을 함께 보여주는 웹 포트폴리오</p>
             <dl class="detail-meta">
@@ -415,7 +469,7 @@
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>PDF에 길게 쌓인 설명만으로는 프로젝트의 화면과 본인 기여를 빠르게 파악하기 어려웠습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>정보 구조와 디자인을 정리하고, 프로젝트 카드·상세 모달·슬라이드와 키보드 탐색을 구현했습니다.</p></section>
-              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>5개 프로젝트 · 반응형 UI</strong>실제 화면과 기술적 의사결정을 함께 읽고, 같은 URL에서 최신 내용을 확인할 수 있습니다.</p></section>
+              <section><span class="case-label">03 / OUTCOME</span><h4>결과</h4><p><strong>6개 프로젝트 · 반응형 UI</strong>실제 화면과 기술적 의사결정, 진행 중 프로젝트의 완료·예정 범위를 함께 확인할 수 있습니다.</p></section>
             </div>
             <section><h4>UI 구조</h4><p>카드에서는 프로젝트와 성과를 빠르게 훑고, 상세 모달에서는 하나의 프로젝트에 집중하도록 나눴습니다. 프로젝트명·역할을 먼저 보여준 뒤 실제 화면과 문제 해결 과정을 배치했습니다. 슬라이드는 전체 장수와 현재 위치를 표시하고, 이미지와 조작부를 분리해 작은 화면에서도 내용을 가리지 않도록 구성했습니다.</p></section>
             <a class="detail-link" href="#top">사이트 위로 이동</a>

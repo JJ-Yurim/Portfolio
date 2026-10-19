@@ -36,6 +36,9 @@ const projectSlides = {
     { src: 'assets/captures/homekeeper-risk-popup.png', alt: '로컬에서 재실행한 홈키퍼 지도. 신림동 위험도 매우 높음, 점수 100점, 전체 1위로 표시된 팝업 화면', caption: 'HomeKeeper · 로컬 재실행 지도 지역별 상세 정보' },
     { src: 'assets/diagrams/homekeeper-data-flow.svg', alt: '홈키퍼 외부 데이터 수집부터 지도 시각화까지의 분석 흐름', caption: 'HomeKeeper · 데이터 수집·정규화·모델 비교 흐름' },
   ],
+  axcore: [
+    { src: 'assets/diagrams/axcore-ontology-flow.svg', alt: 'AI 제안부터 데이터 검증, 사람의 검토, 승인 반영까지의 구현 예정 흐름', caption: '설계 흐름도 · 구현 예정 구조' },
+  ],
   portfolio: [
     { src: 'assets/captures/portfolio-project-list-check-2.png', alt: '개인 포트폴리오 프로젝트 목록 화면', caption: 'Portfolio · 프로젝트 목록' },
     { src: 'assets/captures/portfolio-project-modal-check-2.png', alt: '개인 포트폴리오 프로젝트 상세 모달 화면', caption: 'Portfolio · 상세 모달' },

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">온톨로지 구축·운영 지원 플랫폼 설계 흐름</title>
+  <desc id="desc">기획·분석 단계의 개념도입니다. AI 제안, 데이터 검증, 사람의 검토, 승인 반영을 구현할 예정입니다.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#5369ae" stroke-width="1.5"/></marker></defs>
+  <rect width="1200" height="720" fill="#eef1fa"/>
+  <g font-family="'IBM Plex Sans KR','Malgun Gothic',sans-serif">
+    <text x="64" y="76" fill="#5369ae" font-size="18" letter-spacing="3">AXCORE / ONTOLOGY</text>
+    <text x="64" y="142" fill="#20293d" font-size="40" font-weight="600">AI의 제안을, 검증된 관계로</text>
+    <text x="64" y="187" fill="#596379" font-size="22">진행 중 · 요구사항 분석 및 설계</text>
+    <rect x="64" y="242" width="1072" height="306" rx="12" fill="#fff"/>
+    <text x="96" y="287" fill="#5369ae" font-size="17">구현 예정 흐름</text>
+    <g fill="#f6f7fc" stroke="#d9dfef"><rect x="96" y="325" width="210" height="144" rx="8"/><rect x="362" y="325" width="210" height="144" rx="8"/><rect x="628" y="325" width="210" height="144" rx="8"/><rect x="894" y="325" width="210" height="144" rx="8"/></g>
+    <g fill="#20293d" font-size="25" font-weight="600" text-anchor="middle"><text x="201" y="378">AI 제안</text><text x="467" y="378">데이터 검증</text><text x="733" y="378">사람의 검토</text><text x="999" y="378">승인 반영</text></g>
+    <g fill="#596379" font-size="18" text-anchor="middle"><text x="201" y="419">객체·관계 후보</text><text x="467" y="419">매핑·정합성</text><text x="733" y="419">수정·승인·반려</text><text x="999" y="419">연결·결과 확인</text></g>
+    <g stroke="#5369ae" stroke-width="2" marker-end="url(#arrow)"><path d="M318 397H346"/><path d="M584 397H612"/><path d="M850 397H878"/></g>
+    <text x="96" y="514" fill="#596379" font-size="18">Backend B 담당 예정: 식별자 매핑 · 정합성 검증 · 검토 결과 반영 연계</text>
+    <text x="64" y="608" fill="#26624f" font-size="21" font-weight="600">완료한 내용</text><text x="244" y="608" fill="#596379" font-size="21">예시 데이터 검토 · 사용자 시나리오 초안 정리</text>
+    <text x="64" y="654" fill="#5369ae" font-size="21" font-weight="600">예정인 내용</text><text x="244" y="654" fill="#596379" font-size="21">매핑·검증 구현 · 사람의 승인 결과 반영 · 테스트</text>
+  </g>
+</svg>
