@@ -39,8 +39,8 @@ test('style and interaction files are present', async () => {
 test('hero has a focused developer portfolio message', async () => {
   const html = await read('index.html');
 
-  assert.match(html, /고객의 불편을 직접 마주한 최전선 개발자/);
-  assert.match(html, /응대하던 자리에서 서비스를 만드는 자리/);
+  assert.match(html, /현업의 반복 업무를 이해하고 Python·데이터·AI 기능으로 해결하는 개발자/);
+  assert.match(html, /현업을 이해하고, 구현 결과를 확인합니다/);
   assert.match(html, /더 알아보기/);
 });
 
