@@ -53,7 +53,7 @@ let lastFocusedElement = null;
 function getFocusableElements(container) {
   if (!container) return [];
   return Array.from(
-    container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+    container.querySelectorAll('a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'),
   ).filter((element) => element.offsetParent !== null);
 }
 function setPageInert(isInert) {
@@ -168,8 +168,9 @@ window.addEventListener('keydown', (event) => {
     closeProject();
     return;
   }
-  if (event.key === 'ArrowLeft') updateSlide(activeProject, -1);
-  if (event.key === 'ArrowRight') updateSlide(activeProject, 1);
+  const isCodePanel = event.target?.closest?.('.code-panel');
+  if (!isCodePanel && event.key === 'ArrowLeft') updateSlide(activeProject, -1);
+  if (!isCodePanel && event.key === 'ArrowRight') updateSlide(activeProject, 1);
 
   if (event.key === 'Tab') {
     const focusableElements = getFocusableElements(projectModal);

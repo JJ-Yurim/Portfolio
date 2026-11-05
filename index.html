@@ -30,7 +30,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20261012-1" />
-    <link rel="stylesheet" href="editorial.css?v=20261019-1" />
+    <link rel="stylesheet" href="editorial.css?v=20261105-code1" />
+    <link rel="stylesheet" href="code-cases.css?v=20261105-code1" />
   </head>
   <body>
     <header class="site-header">
@@ -65,6 +66,11 @@
             <button class="text-button" type="button" data-scroll="#about">더 알아보기</button>
           </div>
           </div>
+          <div class="experience-strip" aria-label="경험과 구현 근거">
+            <div><span>01 / FIELD</span><strong>호텔 실무 3년 4개월</strong><p>예약·요금·판매 채널을 직접 다룬 경험</p></div>
+            <div><span>02 / BUILD</span><strong>데이터와 업무 흐름 구현</strong><p>외부 데이터 연결부터 검토·결정 기록까지</p></div>
+            <div><span>03 / EVIDENCE</span><strong>코드로 설명하는 문제 해결</strong><p>프로젝트마다 핵심 구현과 근거를 함께</p></div>
+          </div>
           <div class="hero-foot"><span>Java · Spring Boot · PostgreSQL · Django</span><span>현장 업무 이해에서 정확한 데이터 처리까지</span></div>
         </div>
       </section>
@@ -85,6 +91,7 @@
             <strong>GotYA</strong>
             <p>취향 테스트와 AI를 활용한 영화·도서·문화생활 큐레이션 서비스</p>
             <span class="tile-outcome">LLM 응답 검증 · 27 API · 22 테이블</span>
+            <span class="project-code-teaser"><span aria-hidden="true">{ }</span> 핵심 코드 · ID 검증·중복 제외</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="PY">Python</span>
               <span class="stack-chip" data-logo="AI">LLM API</span>
@@ -98,6 +105,7 @@
             <strong>에이엑스코어 연계</strong>
             <p>여러 업무 시스템의 데이터를 연결하고, AI의 제안을 담당자가 검토하는 업무 데이터 통합 플랫폼</p>
             <span class="tile-outcome">제안 검토·결정 기록 구현 / 실제 반영·통합 검증 진행 중</span>
+            <span class="project-code-teaser"><span aria-hidden="true">{ }</span> 핵심 코드 · 결정 처리·실패 기록</span>
             <span class="tile-tags"><span class="stack-chip" data-logo="J">Java</span><span class="stack-chip" data-logo="S">Spring Boot</span><span class="stack-chip" data-logo="DB">PostgreSQL</span></span>
           </button>
           <button class="project-tile" type="button" data-project="itdam" aria-label="잇담 프로젝트 자세히 보기">
@@ -106,11 +114,12 @@
             <strong>잇담</strong>
             <p>매일 다섯 단어로 문장을 쓰고 AI 평가로 보스 레이드에 도전하는 창작 게임 서비스</p>
             <span class="tile-outcome">저장 중 추가 입력 보존 · 19+ 화면 · 우수상</span>
+            <span class="project-code-teaser"><span aria-hidden="true">{ }</span> 핵심 코드 · 저장 요청 중복 방지</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="TS">TypeScript</span>
-              
-              
+
+
             </span>
           </button>
           <button class="project-tile" type="button" data-project="homekeeper" aria-label="홈키퍼 프로젝트 자세히 보기">
@@ -120,6 +129,7 @@
             <strong>홈키퍼</strong>
             <p>흩어진 주거 데이터를 모아 서울 동별 위험 요인을 시범 분석하고 지도에 시각화한 프로젝트</p>
             <span class="tile-outcome">팀장 · 데이터 수집·정규화 · 위험도 지도</span>
+            <span class="project-code-teaser"><span aria-hidden="true">{ }</span> 핵심 코드 · 데이터 정리·비교 기준</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="P">Python</span>
               <span class="stack-chip" data-logo="D">Pandas</span>
@@ -133,6 +143,7 @@
             <strong>까꿍</strong>
             <p>웹캠 동작으로 조작하는 실시간 3D 멀티플레이 숨바꼭질 게임</p>
             <span class="tile-outcome">플레이 정보·지도 교환 화면 · 전송량 84% 절감(팀 측정)</span>
+            <span class="project-code-teaser"><span aria-hidden="true">{ }</span> 핵심 코드 · 상태별 행동 안내</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="R">React</span>
               <span class="stack-chip" data-logo="3">Three.js</span>
@@ -146,6 +157,7 @@
             <strong>개인 포트폴리오</strong>
             <p>프로젝트 경험과 기술적 의사결정을 한눈에 보여주기 위해 직접 설계한 반응형 포트폴리오 웹사이트</p>
             <span class="tile-outcome">6개 프로젝트 · 반응형 UI · 접근성 개선</span>
+            <span class="project-code-teaser"><span aria-hidden="true">{ }</span> 핵심 코드 · 초점·배경 조작 관리</span>
             <span class="tile-tags">
               <span class="stack-chip" data-logo="H">HTML</span>
               <span class="stack-chip" data-logo="C">CSS</span>
@@ -247,6 +259,18 @@
               <span class="stack-chip" data-logo="DRF">DRF</span>
               <span class="stack-chip" data-logo="K">Kakao Map</span>
             </div>
+
+            <section class="implementation-case" aria-labelledby="code-gotya">
+              <div class="implementation-heading"><div><span class="implementation-kicker">IMPLEMENTATION NOTE</span><h4 id="code-gotya">AI 응답을 그대로 믿지 않는 추천 처리</h4></div><span class="code-origin source">공개 소스 발췌</span></div>
+              <div class="implementation-layout">
+                <div class="implementation-explanation">
+                  <div><h5>어떤 문제였나요?</h5><p>AI가 돌려준 추천에 실제 후보에 없는 ID나 같은 콘텐츠가 섞일 수 있었습니다.</p></div>
+                  <div><h5>어떻게 풀었나요?</h5><p>응답 ID를 DB 후보와 대조하고 중복을 제외했습니다. 부족한 추천은 준비한 후보에서 채우는 흐름으로 연결했습니다.</p></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>아래는 공개 저장소에 있는 검증·보완 분기입니다. 강조한 줄에서 유효하지 않은 ID와 중복을 걸러냅니다.</p><a href="https://github.com/JJ-Yurim/GotYA-project/blob/ea63f2b60b46835c5c5b83454463b9b52348b6ee/backend/tastes/services/recommendation_service.py#L75-L99" target="_blank" rel="noreferrer">원본 코드와 앞뒤 맥락 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>recommendation_service.py</span><span class="code-language">Python</span></summary><p class="code-reading-note">공개된 원본의 핵심 부분 발췌 · 강조된 줄을 먼저 읽어보세요.</p><pre tabindex="0" role="region" aria-label="AI 응답을 그대로 믿지 않는 추천 처리 코드"><code><span class="code-line" data-line="75"><span class="token keyword">for</span> raw <span class="token keyword">in</span> raw_rows:</span><span class="code-line" data-line="76">    raw_id = raw.get(<span class="token string">&quot;content_item_id&quot;</span>) <span class="token keyword">if</span> isinstance(raw, dict) <span class="token keyword">else</span> raw</span><span class="code-line" data-line="77">    <span class="token keyword">try</span>:</span><span class="code-line" data-line="78">        content_id = int(raw_id)</span><span class="code-line is-highlighted" data-line="79">    except (TypeError, ValueError):</span><span class="code-line is-highlighted" data-line="80">        <span class="token keyword">continue</span></span><span class="code-line is-highlighted" data-line="81">    <span class="token keyword">if</span> content_id <span class="token keyword">in</span> used_ids <span class="token keyword">or</span> content_id <span class="token keyword">not</span> <span class="token keyword">in</span> candidate_by_id:</span><span class="code-line is-highlighted" data-line="82">        <span class="token keyword">continue</span></span><span class="code-line" data-line="83">    candidate = candidate_by_id[content_id]</span><span class="code-line" data-line="84">    reason = <span class="token string">&quot;&quot;</span></span><span class="code-line" data-line="85">    <span class="token keyword">if</span> isinstance(raw, dict):</span><span class="code-line is-highlighted" data-line="86">        reason = str(raw.get(<span class="token string">&quot;reason&quot;</span>) <span class="token keyword">or</span> <span class="token string">&quot;&quot;</span>).strip()[:<span class="token number">300</span>]</span><span class="code-line is-highlighted" data-line="87">    selected.append((candidate, reason <span class="token keyword">or</span> _default_reason(profile, candidate)))</span><span class="code-line" data-line="88">    used_ids.add(content_id)</span><span class="code-line" data-line="89">    <span class="token keyword">if</span> len(selected) &gt;= per_type:</span><span class="code-line" data-line="90">        <span class="token keyword">break</span></span><span class="code-line" data-line="91"> </span><span class="code-line" data-line="92"><span class="token keyword">for</span> candidate <span class="token keyword">in</span> candidates[content_type]:</span><span class="code-line" data-line="93">    content_id = candidate[<span class="token string">&quot;content_item_id&quot;</span>]</span><span class="code-line" data-line="94">    <span class="token keyword">if</span> len(selected) &gt;= per_type:</span><span class="code-line" data-line="95">        <span class="token keyword">break</span></span><span class="code-line" data-line="96">    <span class="token keyword">if</span> content_id <span class="token keyword">in</span> used_ids:</span><span class="code-line" data-line="97">        <span class="token keyword">continue</span></span><span class="code-line" data-line="98">    selected.append((candidate, _default_reason(profile, candidate)))</span><span class="code-line" data-line="99">    used_ids.add(content_id)</span></code></pre></details>
+              </div>
+            </section>
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>콘텐츠 유형마다 데이터는 다르지만, 추천·좋아요·찜·후기는 같은 흐름으로 연결해야 했습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>공통 콘텐츠 모델과 상세 테이블을 분리하고 외부 데이터 수집·정제·적재와 API를 구현했습니다. GMS를 통한 LLM 추천 연동과 응답 검증·대체 처리를 구현했습니다.</p></section>
@@ -287,6 +311,18 @@
           </div>
           <div class="detail-copy">
             <div class="detail-chips"><span class="stack-chip" data-logo="J">Java</span><span class="stack-chip" data-logo="S">Spring Boot</span><span class="stack-chip" data-logo="DB">PostgreSQL</span></div>
+
+            <section class="implementation-case" aria-labelledby="code-axcore">
+              <div class="implementation-heading"><div><span class="implementation-kicker">IMPLEMENTATION NOTE</span><h4 id="code-axcore">결정과 기록을 같은 처리 흐름으로</h4></div><span class="code-origin example">공개 설명용 예시</span></div>
+              <div class="implementation-layout">
+                <div class="implementation-explanation">
+                  <div><h5>어떤 문제였나요?</h5><p>여러 담당자가 같은 제안을 처리하거나 중간에 오류가 나면, 결정 내용과 저장 상태가 어긋날 수 있습니다.</p></div>
+                  <div><h5>어떻게 풀었나요?</h5><p>권한과 최신 상태를 확인하고 결정·성공 기록을 함께 처리합니다. 실패하면 변경을 취소하고 실패 기록을 별도로 남기는 원리를 보여줍니다.</p></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>내부 소스에서 발췌하지 않은 설명용 의사코드입니다. 실제 기업의 코드·식별자·데이터는 포함하지 않았고, 실제 반영 연결과 통합 검증은 진행 중입니다.</p><a href="assets/diagrams/axcore-ontology-flow.svg?v=20261105-onda2">공개한 개발 흐름도 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>decision-flow.example</span><span class="code-language">Java 형태 의사코드</span></summary><p class="code-reading-note">설명용 예시 · 원본 소스 아님 · 강조된 줄을 먼저 읽어보세요.</p><pre tabindex="0" role="region" aria-label="결정과 기록을 같은 처리 흐름으로 코드"><code><span class="code-line" data-line="1">Decision decide(Request request) {</span><span class="code-line" data-line="2">    <span class="token keyword">try</span> {</span><span class="code-line is-highlighted" data-line="3">        <span class="token keyword">return</span> inTransaction(() -&gt; {</span><span class="code-line" data-line="4">            <span class="token keyword">var</span> item = lockLatest(request.id());</span><span class="code-line is-highlighted" data-line="5">            checkPermission(request.actor());</span><span class="code-line is-highlighted" data-line="6">            checkVersion(item, request.version());</span><span class="code-line" data-line="7">            <span class="token keyword">var</span> decision = saveDecision(item, request);</span><span class="code-line" data-line="8">            recordSuccess(decision);</span><span class="code-line" data-line="9">            <span class="token keyword">return</span> decision;</span><span class="code-line" data-line="10">        });</span><span class="code-line" data-line="11">    } <span class="token keyword">catch</span> (RuntimeException error) {</span><span class="code-line is-highlighted" data-line="12">        recordFailureSeparately(request, error);</span><span class="code-line" data-line="13">        <span class="token keyword">throw</span> error;</span><span class="code-line" data-line="14">    }</span><span class="code-line" data-line="15">}</span></code></pre></details>
+              </div>
+            </section>
             <div class="case-summary" aria-label="프로젝트 목적과 완료·예정 구분">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>여러 업무 시스템에 흩어진 데이터는 이름과 연결 기준이 달라 함께 활용하기 어렵습니다. 데이터를 연결하는 AI의 제안을 담당자가 검토하고, 어떤 근거로 결정했는지 남길 수 있는 플랫폼을 개발하고 있습니다.</p></section>
               <section><span class="case-label">02 / IMPLEMENTED</span><h4>완료한 내용</h4><div class="progress-copy"><span class="progress-label completed">제안 검토·결정 기록 백엔드 구현</span><ul><li>제안 목록·상세·수정 이력 조회와 직접 작성·수정 기능 개발</li><li>처리 권한과 최신 상태를 확인하고, 여러 사람이 동시에 검토해도 처리 내용이 엇갈리지 않도록 보호</li><li>누가 어떤 결정을 했는지 저장하고 이전 결정 이력을 조회하는 기능 구현</li><li>별도 작업본에서 승인·거절·보류 처리와 작업 기록을 연결하고, 실패 시 변경 취소 후 실패 원인을 별도로 남기는 흐름 구현</li></ul><p>현재 개발 작업본 기준입니다. 실제 종류별 데이터 반영 기능과 전체 흐름의 통합 검증은 남아 있습니다.</p></div></section>
@@ -325,6 +361,18 @@
               <span class="stack-chip" data-logo="S">Spring Boot</span>
               <span class="stack-chip" data-logo="F">FastAPI</span>
             </div>
+
+            <section class="implementation-case" aria-labelledby="code-itdam">
+              <div class="implementation-heading"><div><span class="implementation-kicker">IMPLEMENTATION NOTE</span><h4 id="code-itdam">겹친 저장 요청과 같은 내용을 구분하기</h4></div><span class="code-origin source">초기 구현 · 공개 소스 발췌</span></div>
+              <div class="implementation-layout">
+                <div class="implementation-explanation">
+                  <div><h5>어떤 문제였나요?</h5><p>저장 버튼과 예약된 자동 저장이 겹치면 같은 내용이 중복 저장될 수 있었습니다.</p></div>
+                  <div><h5>어떻게 풀었나요?</h5><p>진행 중 요청은 대기 상태로 기록하고, 마지막으로 저장한 내용과 같으면 새 요청을 만들지 않는 분기를 두었습니다.</p></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>초기 자동·수동 저장 병행 단계의 코드입니다. 최종 화면이 수동 저장 방식으로 바뀐 내용은 아래 본문과 공개 테스트에서 구분해 설명합니다.</p><a href="https://github.com/JJ-Yurim/itdam-project/blob/ca438efd7b155b1d757a9e27930354900014b658/frontend/src/features/sentences/components/SentenceDraftEditor.tsx#L170-L186" target="_blank" rel="noreferrer">초기 저장 처리 원본 보기 <span aria-hidden="true">↗</span></a><a href="https://github.com/JJ-Yurim/itdam-project/blob/ca438efd7b155b1d757a9e27930354900014b658/frontend/src/pages/SentenceCreatePage.test.tsx#L57-L116" target="_blank" rel="noreferrer">최종 수동 저장 테스트 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>SentenceDraftEditor.tsx</span><span class="code-language">TypeScript</span></summary><p class="code-reading-note">공개된 원본의 핵심 부분 발췌 · 강조된 줄을 먼저 읽어보세요.</p><pre tabindex="0" role="region" aria-label="겹친 저장 요청과 같은 내용을 구분하기 코드"><code><span class="code-line" data-line="170"><span class="token keyword">if</span> (!contentToSave.trim() || content.length &gt; MAX_CONTENT_LENGTH || isSaving) {</span><span class="code-line" data-line="171">  <span class="token keyword">return</span> <span class="token keyword">null</span>;</span><span class="code-line" data-line="172">}</span><span class="code-line" data-line="173"> </span><span class="code-line" data-line="174"><span class="token comment">// 진행 중인 저장이 있으면(연타·타이머 중복 실행) 버리지 않고 pending으로</span></span><span class="code-line" data-line="175"><span class="token comment">// 기록한다. 진행 중 저장이 끝나면 최신 내용 기준으로 이어서 저장된다.</span></span><span class="code-line is-highlighted" data-line="176"><span class="token keyword">if</span> (inFlightSaveRef.current) {</span><span class="code-line is-highlighted" data-line="177">  setHasPendingSave(<span class="token keyword">true</span>);</span><span class="code-line" data-line="178">  <span class="token keyword">return</span> <span class="token keyword">null</span>;</span><span class="code-line" data-line="179">}</span><span class="code-line" data-line="180"> </span><span class="code-line" data-line="181"><span class="token comment">// 마지막으로 저장한 내용과 동일하면(수동 저장 직후 예약돼 있던 자동 저장이</span></span><span class="code-line" data-line="182"><span class="token comment">// 늦게 실행되는 경우) 요청을 만들지 않고 이미 저장된 버전 id를 돌려준다.</span></span><span class="code-line" data-line="183"><span class="token comment">// 수정 모드는 같은 내용도 새 버전 생성이 목적이라 예외.</span></span><span class="code-line is-highlighted" data-line="184"><span class="token keyword">if</span> (!isRevisionMode &amp;&amp; contentToSave === lastSavedContentRef.current) {</span><span class="code-line is-highlighted" data-line="185">  <span class="token keyword">return</span> versionId;</span><span class="code-line" data-line="186">}</span></code></pre></details>
+              </div>
+            </section>
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>자동 저장과 수동 저장이 겹칠 때, 마지막 입력을 잃지 않는 작성 경험이 필요했습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>일정·이슈를 관리하고 인증부터 문장 작성, 도서관, 서고, 레이드까지 주요 화면과 저장 상태 흐름을 구현했습니다.</p></section>
@@ -375,6 +423,18 @@
               <span class="stack-chip" data-logo="ML">머신러닝</span>
               <span class="stack-chip" data-logo="BI">Power BI</span>
             </div>
+
+            <section class="implementation-case" aria-labelledby="code-homekeeper">
+              <div class="implementation-heading"><div><span class="implementation-kicker">IMPLEMENTATION NOTE</span><h4 id="code-homekeeper">서로 다른 지표를 비교할 기준 맞추기</h4></div><span class="code-origin example">분석 절차 재구성 예시</span></div>
+              <div class="implementation-layout">
+                <div class="implementation-explanation">
+                  <div><h5>어떤 문제였나요?</h5><p>자료마다 지역 이름과 지표의 값 범위가 달라 한 지도에서 비교하기 어려웠습니다.</p></div>
+                  <div><h5>어떻게 풀었나요?</h5><p>지역 기준을 확인하고, 크기가 다른 지표를 비교 가능한 범위로 바꾸는 분석 절차를 설명합니다.</p></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>원본 분석 노트북 발췌가 아닌 설명용 Python 예시입니다. 원래 모델·점수를 재현하는 코드가 아니며, 실제 수행 범위와 분석의 한계는 아래 본문에 적었습니다.</p><a href="assets/diagrams/homekeeper-data-flow.svg">분석 절차와 흐름도 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>data-preparation.example.py</span><span class="code-language">Python · 설명용 예시</span></summary><p class="code-reading-note">설명용 예시 · 원본 소스 아님 · 강조된 줄을 먼저 읽어보세요.</p><pre tabindex="0" role="region" aria-label="서로 다른 지표를 비교할 기준 맞추기 코드"><code><span class="code-line" data-line="1"><span class="token comment"># 분석 흐름을 설명하는 예시입니다.</span></span><span class="code-line" data-line="2">metrics = source_data.copy()</span><span class="code-line is-highlighted" data-line="3">metrics[<span class="token string">&quot;region&quot;</span>] = metrics[<span class="token string">&quot;region&quot;</span>].str.strip()</span><span class="code-line is-highlighted" data-line="4"><span class="token keyword">if</span> metrics[<span class="token string">&quot;region&quot;</span>].duplicated().any():</span><span class="code-line is-highlighted" data-line="5">    raise ValueError(<span class="token string">&quot;지역별 집계 기준을 먼저 확인합니다.&quot;</span>)</span><span class="code-line" data-line="6"> </span><span class="code-line" data-line="7"><span class="token keyword">for</span> column <span class="token keyword">in</span> indicator_columns:</span><span class="code-line" data-line="8">    values = metrics[column]</span><span class="code-line is-highlighted" data-line="9">    span = values.max() - values.min()</span><span class="code-line" data-line="10">    metrics[column] = (</span><span class="code-line is-highlighted" data-line="11">        (values - values.min()) / span</span><span class="code-line" data-line="12">        <span class="token keyword">if</span> span &gt; <span class="token number">0</span> <span class="token keyword">else</span> <span class="token number">0</span>.<span class="token number">0</span></span><span class="code-line" data-line="13">    )</span><span class="code-line" data-line="14"> </span><span class="code-line" data-line="15">map_rows = boundaries.merge(</span><span class="code-line" data-line="16">    metrics,</span><span class="code-line" data-line="17">    on=<span class="token string">&quot;region&quot;</span>,</span><span class="code-line" data-line="18">    how=<span class="token string">&quot;left&quot;</span>,</span><span class="code-line is-highlighted" data-line="19">    validate=<span class="token string">&quot;one_to_one&quot;</span>,</span><span class="code-line" data-line="20">)</span></code></pre></details>
+              </div>
+            </section>
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>주거 위험을 살펴볼 자료가 여러 곳에 흩어져 있고, 행정구역 단위도 달라 지역별로 함께 비교하기 어려웠습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>외부 데이터를 수집하고 지역 단위를 맞춘 뒤, 값의 규모가 다른 지표를 정제·정규화해 분석에 사용할 수 있도록 준비했습니다.</p></section>
@@ -419,6 +479,18 @@
               <span class="stack-chip" data-logo="C">Colyseus</span>
               <span class="stack-chip" data-logo="L">LiveKit</span>
             </div>
+
+            <section class="implementation-case" aria-labelledby="code-kkakkung">
+              <div class="implementation-heading"><div><span class="implementation-kicker">IMPLEMENTATION NOTE</span><h4 id="code-kkakkung">지금 가능한 행동을 상태 문구로 알리기</h4></div><span class="code-origin source">공개 소스 발췌</span></div>
+              <div class="implementation-layout">
+                <div class="implementation-explanation">
+                  <div><h5>어떤 문제였나요?</h5><p>이동·장비 설치·구속 등 상태에 따라 할 수 있는 행동이 달라, 색이나 화면 효과만으로는 현재 상황을 파악하기 어려웠습니다.</p></div>
+                  <div><h5>어떻게 풀었나요?</h5><p>서버에서 받은 플레이어 상태를 하나의 상태 값과 안내 문구로 바꾸어 표현했습니다.</p></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>현재 공개 버전에서 이 컴포넌트는 접근성 계층에 사용됩니다. 화면 전체나 서버의 정보 필터링 구현으로 과장하지 않고, 제가 담당한 상태 안내 부분을 발췌했습니다.</p><a href="https://github.com/JJ-Yurim/kkakkung-project/blob/5caffc160a955a7b272dc8e616a10c8d99d25837/apps/web/src/features/game/flow/GameHud.tsx#L31-L43" target="_blank" rel="noreferrer">상태 문구 원본 코드 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>GameHud.tsx</span><span class="code-language">TypeScript</span></summary><p class="code-reading-note">공개된 원본의 핵심 부분 발췌 · 강조된 줄을 먼저 읽어보세요.</p><pre tabindex="0" role="region" aria-label="지금 가능한 행동을 상태 문구로 알리기 코드"><code><span class="code-line" data-line="31"><span class="token comment">// 상태는 문구와 data-state를 함께 쓰고 색만으로 전달하지 않는다(V4).</span></span><span class="code-line is-highlighted" data-line="32"><span class="token keyword">const</span> [state, condition] =</span><span class="code-line is-highlighted" data-line="33">  self.restraintUntilTick !== <span class="token keyword">null</span> &amp;&amp; round.serverTick &lt; self.restraintUntilTick</span><span class="code-line is-highlighted" data-line="34">    ? ([<span class="token string">'restrained'</span>, <span class="token string">'구속 중 · 풀릴 때까지 기다리세요'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="35">    : self.challenge</span><span class="code-line is-highlighted" data-line="36">      ? ([<span class="token string">'challenge'</span>, <span class="token string">'탈출 동작 진행 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="37">      : self.installation</span><span class="code-line is-highlighted" data-line="38">        ? ([<span class="token string">'installing'</span>, <span class="token string">'장비 설치 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="39">        : self.action?.kind === <span class="token string">'turn'</span></span><span class="code-line is-highlighted" data-line="40">          ? ([<span class="token string">'turning'</span>, <span class="token string">'회전 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="41">          : self.action</span><span class="code-line is-highlighted" data-line="42">            ? ([<span class="token string">'moving'</span>, <span class="token string">'이동 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="43">            : ([<span class="token string">'ready'</span>, <span class="token string">'행동 가능'</span>] as <span class="token keyword">const</span>);</span></code></pre></details>
+              </div>
+            </section>
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>술래와 도망자의 목표가 달라, 각 역할에 필요한 정보와 행동 상태를 명확하게 구분해야 했습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>역할별 플레이 정보 표시 화면(HUD), 장치 점검, 덫·감지기 설치 피드백과 도망자의 지도 교환 화면을 구현했습니다.</p></section>
@@ -470,6 +542,18 @@
               <span class="stack-chip" data-logo="JS">JavaScript</span>
               <span class="stack-chip" data-logo="UI">Responsive UI</span>
             </div>
+
+            <section class="implementation-case" aria-labelledby="code-portfolio">
+              <div class="implementation-heading"><div><span class="implementation-kicker">IMPLEMENTATION NOTE</span><h4 id="code-portfolio">프로젝트에 집중할 수 있는 모달 열기</h4></div><span class="code-origin source">이 사이트의 실제 구현</span></div>
+              <div class="implementation-layout">
+                <div class="implementation-explanation">
+                  <div><h5>어떤 문제였나요?</h5><p>상세 창이 열린 뒤에도 배경이 조작되거나 키보드 초점이 바깥에 남으면 읽는 흐름이 끊길 수 있습니다.</p></div>
+                  <div><h5>어떻게 풀었나요?</h5><p>선택한 프로젝트만 활성화하고 배경 조작을 막은 다음, 닫기 버튼으로 초점을 옮깁니다.</p></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>현재 사이트에서 사용하는 코드입니다. 모달·슬라이드 자동 검사와 브라우저 확인으로 기존 탐색 흐름을 점검합니다.</p><a href="https://github.com/JJ-Yurim/Portfolio/blob/d880c8c53ad63501c04355a5be985007abc62970/script.js#L115-L132" target="_blank" rel="noreferrer">모달 처리 원본 코드 보기 <span aria-hidden="true">↗</span></a><a href="https://github.com/JJ-Yurim/Portfolio/blob/d880c8c53ad63501c04355a5be985007abc62970/tests/design.test.mjs" target="_blank" rel="noreferrer">탐색 동작 자동 검사 보기 <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>script.js</span><span class="code-language">JavaScript</span></summary><p class="code-reading-note">공개된 원본의 핵심 부분 발췌 · 강조된 줄을 먼저 읽어보세요.</p><pre tabindex="0" role="region" aria-label="프로젝트에 집중할 수 있는 모달 열기 코드"><code><span class="code-line" data-line="115"><span class="token keyword">function</span> openProject(projectId) {</span><span class="code-line" data-line="116">  <span class="token keyword">if</span> (!projectModal || !projectSlides[projectId]) <span class="token keyword">return</span>;</span><span class="code-line is-highlighted" data-line="117">  lastFocusedElement = document.activeElement;</span><span class="code-line" data-line="118">  activeProject = projectId;</span><span class="code-line" data-line="119">  activeSlideIndex = <span class="token number">0</span>;</span><span class="code-line" data-line="120">  detailPanels.forEach((panel) =&gt; {</span><span class="code-line" data-line="121">    <span class="token keyword">const</span> isActive = panel.dataset.project === projectId;</span><span class="code-line" data-line="122">    panel.classList.toggle(<span class="token string">'active'</span>, isActive);</span><span class="code-line is-highlighted" data-line="123">    panel.setAttribute(<span class="token string">'aria-hidden'</span>, String(!isActive));</span><span class="code-line" data-line="124">  });</span><span class="code-line" data-line="125">  updateSlide(projectId);</span><span class="code-line" data-line="126">  projectModal.classList.add(<span class="token string">'open'</span>);</span><span class="code-line" data-line="127">  projectModal.scrollTop = <span class="token number">0</span>;</span><span class="code-line is-highlighted" data-line="128">  projectModal.setAttribute(<span class="token string">'aria-hidden'</span>, <span class="token string">'false'</span>);</span><span class="code-line is-highlighted" data-line="129">  document.body.style.overflow = <span class="token string">'hidden'</span>;</span><span class="code-line is-highlighted" data-line="130">  setPageInert(<span class="token keyword">true</span>);</span><span class="code-line is-highlighted" data-line="131">  projectModalClose?.focus();</span><span class="code-line" data-line="132">}</span></code></pre></details>
+              </div>
+            </section>
             <div class="case-summary" aria-label="문제 해결과 핵심 성과">
               <section><span class="case-label">01 / PROBLEM</span><h4>문제</h4><p>PDF에 길게 쌓인 설명만으로는 프로젝트의 화면과 본인 기여를 빠르게 파악하기 어려웠습니다.</p></section>
               <section><span class="case-label">02 / CONTRIBUTION</span><h4>내가 한 일</h4><p>정보 구조와 디자인을 정리하고, 프로젝트 카드·상세 모달·슬라이드와 키보드 탐색을 구현했습니다.</p></section>
@@ -481,6 +565,6 @@
         </article>
       </div>
     </div>
-    <script src="script.js?v=20261105-onda2"></script>
+    <script src="script.js?v=20261105-code1"></script>
   </body>
 </html>

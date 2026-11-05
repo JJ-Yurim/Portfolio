@@ -36,6 +36,7 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
     return [id, panel];
   }));
   const modal = element();
+  const windowHandlers = new Map();
   const backgroundHeader = element();
   const detailHeader = element();
   const context = vm.createContext({
@@ -46,7 +47,7 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
         s === '.site-header, main, .top-button' ? [backgroundHeader] : [],
       body: element(), activeElement: element(),
     },
-    window: { addEventListener() {}, scrollTo() {} },
+    window: { addEventListener: (type, handler) => windowHandlers.set(type, handler), scrollTo() {} },
     IntersectionObserver: class { observe() {} },
   });
   vm.runInContext(await read('script.js'), context);
@@ -86,4 +87,12 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
   assert.equal(modal.scrollTop, 0, 'new project starts at its introductory header');
   assert.equal(backgroundHeader.inert, true, 'background is unavailable while the modal is open');
   assert.notEqual(detailHeader.inert, true, 'project introduction remains accessible inside the modal');
+  const keydown = windowHandlers.get('keydown');
+  const codeTarget = { closest: selector => selector === '.code-panel' ? {} : null };
+  keydown({ key: 'ArrowRight', target: codeTarget });
+  assert.equal(counter('kkakkung'), '1 / 4', 'right arrow inside code must not change gallery slides');
+  keydown({ key: 'ArrowLeft', target: codeTarget });
+  assert.equal(counter('kkakkung'), '1 / 4', 'code scrolling must not change gallery slides');
+  keydown({ key: 'ArrowRight', target: { closest: () => null } });
+  assert.equal(counter('kkakkung'), '2 / 4', 'gallery arrow shortcuts still work outside code');
 });
