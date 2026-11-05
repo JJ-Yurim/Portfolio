@@ -37,7 +37,7 @@ const projectSlides = {
     { src: 'assets/diagrams/homekeeper-data-flow.svg', alt: '홈키퍼 외부 데이터 수집부터 지도 시각화까지의 분석 흐름', caption: 'HomeKeeper · 데이터 수집·정규화·모델 비교 흐름' },
   ],
   axcore: [
-    { src: 'assets/diagrams/axcore-ontology-flow.svg', alt: '제안 조회·수정부터 권한 확인, 결정 처리와 작업 기록까지의 백엔드 개발 흐름', caption: '백엔드 개발 흐름도 · 실제 반영·통합 검증 진행 중' },
+    { src: 'assets/diagrams/axcore-ontology-flow.svg?v=20261105-onda2', alt: '제안 조회·수정부터 권한 확인, 결정 처리와 작업 기록까지의 백엔드 개발 흐름', caption: '백엔드 개발 흐름도 · 실제 반영·통합 검증 진행 중' },
   ],
   portfolio: [
     { src: 'assets/captures/portfolio-project-list-check-2.png', alt: '개인 포트폴리오 프로젝트 목록 화면', caption: 'Portfolio · 프로젝트 목록' },

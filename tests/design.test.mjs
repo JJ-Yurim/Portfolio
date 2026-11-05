@@ -78,7 +78,7 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
   assert.equal(counter('portfolio'), '1 / 3');
   run("openProject('axcore')");
   assert.equal(counter('axcore'), '1 / 1');
-  assert.match(panels.get('axcore').children.get('.detail-slide-image').src, /axcore-ontology-flow\.svg$/);
+  assert.match(panels.get('axcore').children.get('.detail-slide-image').src, /axcore-ontology-flow\.svg(?:\?[^#]*)?$/);
   run("updateSlide('axcore', 1); updateSlide('axcore', -1)");
   assert.equal(counter('axcore'), '1 / 1', 'a single design illustration stays stable on arrow keys');
   run("openProject('kkakkung')");
