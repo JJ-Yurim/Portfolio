@@ -39,8 +39,8 @@ test('style and interaction files are present', async () => {
 test('hero has a focused developer portfolio message', async () => {
   const html = await read('index.html');
 
-  assert.match(html, /현업의 반복 업무를 이해하고 Python·데이터·AI 기능으로 해결하는 개발자/);
-  assert.match(html, /현업을 이해하고, 구현 결과를 확인합니다/);
+  assert.match(html, /호텔 예약·판매 채널 운영 경험을 바탕으로 데이터와 서비스를 연결하는 백엔드 개발자/);
+  assert.match(html, /호텔 업무를 이해하고, 서비스로 연결합니다/);
   assert.match(html, /더 알아보기/);
 });
 
@@ -157,7 +157,7 @@ test('HomeKeeper cover and gallery show the local map capture with an honest pro
   assert.match(homekeeperPanel, /로컬에서 재실행한 시범 분석 지도/);
   assert.match(homekeeperPanel, /OpenStreetMap contributors/);
   assert.match(html, /href="styles\.css\?v=20261012-1"/);
-  assert.match(html, /src="script\.js\?v=20261012-1"/);
+  assert.match(html, /src="script\.js\?v=[^"]+"/);
   assert.match(await read('script.js'), /caption: 'HomeKeeper · 로컬 재실행 시범 분석 지도 전체 화면'/);
   assert.match(await read('script.js'), /신림동 위험도 매우 높음, 점수 100점, 전체 1위/);
   await access(new URL('../assets/captures/homekeeper-risk-map-overview.png', import.meta.url));

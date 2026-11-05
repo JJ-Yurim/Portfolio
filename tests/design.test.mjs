@@ -17,7 +17,7 @@ test('each project identifies itself and its role before its image gallery', asy
     assert.match(header[1], /<h3>/);
     assert.match(header[1], /담당 역할/);
     assert.ok(panel.indexOf('</header>') < panel.indexOf('class="detail-visual"'));
-    const labels = panel.includes('진행 중 · 요구사항 분석 및 설계')
+    const labels = panel.includes('class="project-status"')
       ? ['문제', '완료한 내용', '예정인 내용'] : ['문제', '내가 한 일', '결과'];
     for (const label of labels) assert.ok(panel.includes(`<h4>${label}</h4>`));
   }
