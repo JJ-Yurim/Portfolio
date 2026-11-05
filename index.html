@@ -187,8 +187,8 @@
             <section aria-labelledby="education-heading">
               <h3 id="education-heading">교육 · 학력</h3>
               <dl class="career-list">
-                <div><dt><time datetime="2026-01">2026.01</time> — 현재</dt><dd><strong>삼성청년SW·AI아카데미 15기</strong><p>1학기 925시간 이수 · Python·SQL·웹 개발·AI 및 팀 프로젝트</p><p>2027년 1월 입사 가능</p></dd></div>
-                <div><dt><time datetime="2025-08">2025.08</time> — <time datetime="2026-01">2026.01</time></dt><dd><strong>아이티윌 (ITWill)</strong><p>데이터 분석 교육과정 · 미이수</p></dd></div>
+                <div><dt><time datetime="2026-01">2026.01</time> — 현재</dt><dd><strong>삼성청년SW·AI아카데미 15기</strong><p>1학기 925시간 이수 · Python·SQL·웹 개발·AI 및 팀 프로젝트</p><p>2026.12 수료 예정 · 2027년 1월 입사 가능</p></dd></div>
+                <div><dt><time datetime="2025-08">2025.08</time> — <time datetime="2026-01">2026.01</time></dt><dd><strong>아이티윌 (ITWill)</strong><p>데이터 분석 교육과정 · 삼성청년SW·AI아카데미 입과로 중도 종료</p></dd></div>
                 <div><dt><time datetime="2017-03">2017.03</time> — <time datetime="2021-08">2021.08</time></dt><dd><strong>호남대학교</strong><p>호텔경영학과 졸업</p></dd></div>
               </dl>
             </section>
@@ -486,7 +486,7 @@
                 <div class="implementation-explanation">
                   <div><h5>어떤 문제였나요?</h5><p>이동·장비 설치·구속 등 상태에 따라 할 수 있는 행동이 달라, 색이나 화면 효과만으로는 현재 상황을 파악하기 어려웠습니다.</p></div>
                   <div><h5>어떻게 풀었나요?</h5><p>서버에서 받은 플레이어 상태를 하나의 상태 값과 안내 문구로 바꾸어 표현했습니다.</p></div>
-                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>현재 공개 버전에서 이 컴포넌트는 접근성 계층에 사용됩니다. 화면 전체나 서버의 정보 필터링 구현으로 과장하지 않고, 제가 담당한 상태 안내 부분을 발췌했습니다.</p><a href="https://github.com/JJ-Yurim/kkakkung-project/blob/5caffc160a955a7b272dc8e616a10c8d99d25837/apps/web/src/features/game/flow/GameHud.tsx#L31-L43" target="_blank" rel="noreferrer">상태 문구 원본 코드 보기 <span aria-hidden="true">↗</span></a></div>
+                  <div class="implementation-evidence"><h5>확인할 근거</h5><p>현재 공개 버전에서 이 코드는 화면을 읽어주는 보조 기능에 사용됩니다. 플레이어의 상태를 안내 문구로 바꾸는 부분을 확인할 수 있습니다.</p><a href="https://github.com/JJ-Yurim/kkakkung-project/blob/5caffc160a955a7b272dc8e616a10c8d99d25837/apps/web/src/features/game/flow/GameHud.tsx#L31-L43" target="_blank" rel="noreferrer">상태 문구 원본 코드 보기 <span aria-hidden="true">↗</span></a></div>
                 </div>
                 <details class="code-panel" open><summary><span class="code-window-dots" aria-hidden="true">● ● ●</span><span>GameHud.tsx</span><span class="code-language">TypeScript</span></summary><p class="code-reading-note">원본 코드 발췌 · 이해를 돕는 한국어 주석 추가 · 숫자 줄 번호는 원본 기준입니다.</p><pre tabindex="0" role="region" aria-label="지금 가능한 행동을 상태 문구로 알리기 코드"><code><span class="code-line" data-line="31"><span class="token comment">// 상태는 문구와 data-state를 함께 쓰고 색만으로 전달하지 않는다(V4).</span></span><span class="code-line code-annotation" data-line="·"><span class="token comment">// 현재 상태와 사용자에게 보여줄 안내를 함께 정합니다.</span></span><span class="code-line is-highlighted" data-line="32"><span class="token keyword">const</span> [state, condition] =</span><span class="code-line code-annotation" data-line="·"><span class="token comment">  // 구속 상태라면 다른 행동보다 먼저 안내합니다.</span></span><span class="code-line is-highlighted" data-line="33">  self.restraintUntilTick !== <span class="token keyword">null</span> &amp;&amp; round.serverTick &lt; self.restraintUntilTick</span><span class="code-line is-highlighted" data-line="34">    ? ([<span class="token string">'restrained'</span>, <span class="token string">'구속 중 · 풀릴 때까지 기다리세요'</span>] as <span class="token keyword">const</span>)</span><span class="code-line code-annotation" data-line="·"><span class="token comment">    // 탈출 동작과 장비 설치도 각각 구분합니다.</span></span><span class="code-line" data-line="35">    : self.challenge</span><span class="code-line is-highlighted" data-line="36">      ? ([<span class="token string">'challenge'</span>, <span class="token string">'탈출 동작 진행 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="37">      : self.installation</span><span class="code-line is-highlighted" data-line="38">        ? ([<span class="token string">'installing'</span>, <span class="token string">'장비 설치 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line code-annotation" data-line="·"><span class="token comment">        // 진행 중인 행동에 따라 회전·이동을 알립니다.</span></span><span class="code-line" data-line="39">        : self.action?.kind === <span class="token string">'turn'</span></span><span class="code-line is-highlighted" data-line="40">          ? ([<span class="token string">'turning'</span>, <span class="token string">'회전 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line" data-line="41">          : self.action</span><span class="code-line is-highlighted" data-line="42">            ? ([<span class="token string">'moving'</span>, <span class="token string">'이동 중'</span>] as <span class="token keyword">const</span>)</span><span class="code-line code-annotation" data-line="·"><span class="token comment">            // 진행 중인 행동이 없으면 행동 가능으로 안내합니다.</span></span><span class="code-line" data-line="43">            : ([<span class="token string">'ready'</span>, <span class="token string">'행동 가능'</span>] as <span class="token keyword">const</span>);</span></code></pre></details>
               </div>
@@ -520,7 +520,7 @@
             <p class="detail-intro">프로젝트의 결과물과 문제 해결 과정을 함께 보여주는 웹 포트폴리오</p>
             <dl class="detail-meta">
               <div><dt>담당 역할</dt><dd>정보 설계 · 디자인 · 개발</dd></div>
-              <div><dt>진행 기간</dt><dd>2026.10</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.10 — 현재 개선 중</dd></div>
               <div><dt>팀 구성</dt><dd>개인 프로젝트</dd></div>
             </dl>
           </header>
