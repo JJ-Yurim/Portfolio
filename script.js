@@ -157,6 +157,7 @@ detailPanels.forEach((panel) => {
   });
 });
 
+document.querySelector('.project-modal a[href="#top"]')?.addEventListener('click', closeProject);
 projectModalClose?.addEventListener('click', closeProject);
 projectModal?.addEventListener('click', (event) => {
   if (event.target === projectModal) closeProject();
