@@ -15,7 +15,7 @@ test('portfolio page contains the core recruiting sections', async () => {
 test('portfolio page links public GitHub projects', async () => {
   const html = await read('index.html');
 
-  for (const repo of ['GotYA-project', 'itdam-project', 'kkakkung-project']) {
+  for (const repo of ['GotYA-portfolio', 'itdam-project', 'kkakkung-project']) {
     assert.match(html, new RegExp(`https://github.com/JJ-Yurim/${repo}`));
   }
 });
