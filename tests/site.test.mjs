@@ -42,7 +42,8 @@ test('hero has a focused developer portfolio message', async () => {
   assert.match(html, /호텔 예약·판매 채널 운영 경험을 바탕으로 데이터와 서비스를 연결하는 백엔드 개발자/);
   const cover = html.match(/<section class="cover"[^>]*>([\s\S]*?)<\/section>/)[1];
   assert.match(cover, /<h1[^>]*>호텔 운영에서 <em>서비스 개발로\.<\/em><\/h1>/);
-  assert.match(cover, /정유림 <span>백엔드 개발자<\/span>/);
+  assert.match(cover, /<p class="cover-name">정유림<\/p>/);
+  assert.doesNotMatch(cover, /백엔드 개발자/);
   assert.doesNotMatch(cover, /<aside|<fieldset|<img/);
   assert.match(html, /<a href="#projects">프로젝트<\/a>/);
 });

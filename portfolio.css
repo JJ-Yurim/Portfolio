@@ -35,8 +35,7 @@ a:focus-visible, button:focus-visible { outline-color: var(--accent); }
   padding-block: clamp(36px, 4.3vw, 62px) clamp(36px, 4.7vw, 68px);
   text-align: center;
 }
-.cover-role { display: inline-flex; align-items: center; gap: 11px; margin: 0 0 16px; font-size: 1.06rem; font-weight: 700; }
-.cover-role span { padding-left: 11px; border-left: 1px solid var(--line); color: var(--body); font-size: .94rem; font-weight: 500; line-height: 1.1; }
+.cover-name { margin: 0 0 16px; font-size: 1.06rem; font-weight: 700; }
 .cover h1 { margin: 0; font-size: clamp(3.15rem, 6.55vw, 6.1rem); font-weight: 700; line-height: 1.16; letter-spacing: -.077em; word-break: keep-all; }
 .cover h1 em { position: relative; display: inline-block; z-index: 0; font-style: normal; white-space: nowrap; }
 .cover h1 em::after { content: ""; position: absolute; inset: auto 0 .075em; z-index: -1; height: .17em; background: var(--highlight); }
@@ -189,7 +188,7 @@ a:focus-visible, button:focus-visible { outline-color: var(--accent); }
   .masthead nav { gap: 12px; }
   .masthead nav a { font-size: .88rem; }
   .cover-inner { padding-block: 30px; text-align: left; }
-  .cover-role { margin-bottom: 10px; }
+  .cover-name { margin-bottom: 10px; }
   .cover h1 { font-size: clamp(2.1rem, 10vw, 3.9rem); letter-spacing: -.06em; }
   .cover h1 em { display: table; max-width: 100%; white-space: normal; }
   .cover-intro { max-width: 29em; margin: 14px 0 0; }
