@@ -63,14 +63,11 @@
 .implementation-evidence { padding-top: 18px; border-top: 1px solid #dce5f2; }
 .implementation-evidence a { display: block; width: fit-content; margin-top: 12px; color: #2857b8; font-size: 12px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 .code-panel { border: 1px solid #23344f; border-radius: 12px; overflow: hidden; background: #111e33; box-shadow: 0 8px 23px #142c4c13; }
-.code-panel summary {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 9px; padding: 14px 16px; cursor: pointer;
+.code-file {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 9px; padding: 14px 16px;
   color: #e0e9fa; background: #1b2a43; font-family: Consolas, 'Malgun Gothic', monospace; font-size: 11px; line-height: 1.65;
 }
-.code-panel summary::-webkit-details-marker { display: none; }
-.code-panel summary::after { content: '+'; margin-left: auto; color: #a4bbdf; font-size: 18px; line-height: 1; }
-.code-panel[open] summary::after { content: '−'; }
-.code-panel summary > span:nth-child(2) { overflow-wrap: anywhere; }
+.code-file > span:nth-child(2) { overflow-wrap: anywhere; }
 .code-window-dots { color: #7694bd; font-size: 8px; letter-spacing: 1px; white-space: nowrap; }
 .code-language { margin-left: auto; color: #a5bddc; font-family: 'IBM Plex Sans KR', sans-serif; font-size: 9px; }
 .code-panel .code-reading-note { margin: 0; padding: 12px 16px 8px; color: #a6bad6; font-size: 10px !important; line-height: 1.7 !important; }
@@ -115,7 +112,7 @@
   .implementation-layout { padding: 18px 12px; gap: 20px; }
   .implementation-explanation { display: block; padding: 0 6px; }
   .implementation-explanation > div + div { margin-top: 20px; }
-  .code-panel summary { gap: 7px; padding: 12px 10px; }
+  .code-file { gap: 7px; padding: 12px 10px; }
   .code-window-dots { display: none; }
   .code-language { margin-left: 0; }
   .code-panel pre { font-size: 11px; }

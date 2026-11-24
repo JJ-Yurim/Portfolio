@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
   <title id="title">업무 데이터 통합 플랫폼의 제안 검토·결정 기록 개발 흐름</title>
-  <desc id="desc">2026년 11월 5일 개발 작업본 기준입니다. 제안 조회·수정, 권한·상태 확인, 결정 처리와 이력 기록을 구현했습니다. 종류별 실제 데이터 반영과 전체 통합 검증은 진행 중입니다.</desc>
+  <desc id="desc">온톨로지니에서 제안을 검토하고 승인 근거, 실제 반영 결과와 결정 이력을 연결하는 과정을 설명합니다.</desc>
   <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#5369ae" stroke-width="1.5"/></marker></defs>
   <rect width="1200" height="720" fill="#eef1fa"/>
   <g font-family="'IBM Plex Sans KR','Malgun Gothic',sans-serif">
-    <text x="64" y="76" fill="#5369ae" font-size="18" letter-spacing="3">AXCORE / ONTOLOGY</text>
+    <text x="64" y="76" fill="#5369ae" font-size="18" letter-spacing="3">ONTOLOGENIE</text>
     <text x="64" y="142" fill="#20293d" font-size="36" font-weight="600">AI 제안을 검토하고, 결정의 근거를 남깁니다</text>
-    <text x="64" y="187" fill="#596379" font-size="22">백엔드 개발 진행 중 · 2026.11.05 기준</text>
+    <text x="64" y="187" fill="#596379" font-size="22">에이엑스코어 연계 · 2026.10 — 2026.11</text>
     <rect x="64" y="242" width="1072" height="306" rx="12" fill="#fff"/>
-    <text x="96" y="287" fill="#5369ae" font-size="17">개발 작업본의 검토·결정 처리 흐름</text>
+    <text x="96" y="287" fill="#5369ae" font-size="17">검토·승인·이력 처리 흐름</text>
     <g fill="#f6f7fc" stroke="#d9dfef"><rect x="96" y="325" width="210" height="144" rx="8"/><rect x="362" y="325" width="210" height="144" rx="8"/><rect x="628" y="325" width="210" height="144" rx="8"/><rect x="894" y="325" width="210" height="144" rx="8"/></g>
     <g fill="#20293d" font-size="22" font-weight="600" text-anchor="middle"><text x="201" y="378">제안 조회·수정</text><text x="467" y="378">권한·상태 확인</text><text x="733" y="378">승인·거절·보류</text><text x="999" y="378">결정·작업 기록</text></g>
     <g fill="#596379" font-size="18" text-anchor="middle"><text x="201" y="419">내용과 수정 이력</text><text x="467" y="419">최신 상태 보호</text><text x="733" y="419">결정 처리 연결</text><text x="999" y="419">이력 조회·실패 기록</text></g>
     <g stroke="#5369ae" stroke-width="2" marker-end="url(#arrow)"><path d="M318 397H346"/><path d="M584 397H612"/><path d="M850 397H878"/></g>
     <text x="96" y="514" fill="#596379" font-size="18">사용 기술: Java · Spring Boot · PostgreSQL</text>
-    <text x="64" y="608" fill="#26624f" font-size="21" font-weight="600">구현한 내용</text><text x="244" y="608" fill="#596379" font-size="21">제안 검토 · 결정 이력 조회 · 실패 시 변경 취소와 기록</text>
-    <text x="64" y="654" fill="#5369ae" font-size="21" font-weight="600">진행 중</text><text x="244" y="654" fill="#596379" font-size="21">종류별 실제 데이터 반영 · 전체 흐름 통합 검증</text>
+    <text x="64" y="608" fill="#26624f" font-size="21" font-weight="600">승인 처리</text><text x="244" y="608" fill="#596379" font-size="21">제안 검토 · 결정 이력 조회 · 실패 시 변경 취소와 기록</text>
+    <text x="64" y="654" fill="#5369ae" font-size="21" font-weight="600">검증 범위</text><text x="244" y="654" fill="#596379" font-size="21">객체 유형 승인·롤백, 반영 결과 조회와 감사 기록 확인</text>
   </g>
 </svg>

@@ -37,12 +37,7 @@ const projectSlides = {
     { src: 'assets/diagrams/homekeeper-data-flow.svg', alt: '홈키퍼 외부 데이터 수집부터 지도 시각화까지의 분석 흐름', caption: 'HomeKeeper · 데이터 수집·정규화·모델 비교 흐름' },
   ],
   axcore: [
-    { src: 'assets/diagrams/axcore-ontology-flow.svg?v=20261105-onda2', alt: '제안 조회·수정부터 권한 확인, 결정 처리와 작업 기록까지의 백엔드 개발 흐름', caption: '백엔드 개발 흐름도 · 실제 반영·통합 검증 진행 중' },
-  ],
-  portfolio: [
-    { src: 'assets/captures/portfolio-project-list-check-2.png', alt: '개인 포트폴리오 프로젝트 목록 화면', caption: 'Portfolio · 프로젝트 목록' },
-    { src: 'assets/captures/portfolio-project-modal-check-2.png', alt: '개인 포트폴리오 프로젝트 상세 모달 화면', caption: 'Portfolio · 상세 모달' },
-    { src: 'assets/captures/portfolio-itdam-ui-check-3.png', alt: '개인 포트폴리오 이전 프로젝트 상세 화면', caption: 'Portfolio · UI 개선 과정' },
+    { src: 'assets/diagrams/axcore-ontology-flow.svg', alt: '제안 조회·수정부터 권한 확인, 결정 처리와 작업 기록까지의 백엔드 개발 흐름', caption: '온톨로지니 · 승인과 결정 이력 처리 흐름도' },
   ],
 };
 
@@ -57,7 +52,7 @@ function getFocusableElements(container) {
   ).filter((element) => element.offsetParent !== null);
 }
 function setPageInert(isInert) {
-  document.querySelectorAll('.site-header, main, .top-button').forEach((element) => {
+  document.querySelectorAll('.masthead, .skip-link, main, .top-button').forEach((element) => {
     element.inert = isInert;
   });
 }
@@ -157,10 +152,9 @@ detailPanels.forEach((panel) => {
   });
 });
 
-document.querySelector('.project-modal a[href="#top"]')?.addEventListener('click', closeProject);
 projectModalClose?.addEventListener('click', closeProject);
 projectModal?.addEventListener('click', (event) => {
-  if (event.target === projectModal) closeProject();
+  if (event.target === projectModal || event.target.closest?.('a[href="#top"]')) closeProject();
 });
 window.addEventListener('keydown', (event) => {
   if (!activeProject) return;
@@ -169,7 +163,7 @@ window.addEventListener('keydown', (event) => {
     closeProject();
     return;
   }
-  const isCodePanel = event.target?.closest?.('.code-panel');
+  const isCodePanel = event.target?.closest?.('.code-panel') || event.target?.closest?.('.case-code');
   if (!isCodePanel && event.key === 'ArrowLeft') updateSlide(activeProject, -1);
   if (!isCodePanel && event.key === 'ArrowRight') updateSlide(activeProject, 1);
 

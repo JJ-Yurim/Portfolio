@@ -29,7 +29,7 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
     classList: { add() {}, remove() {}, toggle() {}, contains: () => true },
     setAttribute() {}, addEventListener() {}, focus() {}, scrollTop: 99 });
   const selectors = new Map();
-  const panels = new Map(['itdam', 'kkakkung', 'gotya', 'homekeeper', 'axcore', 'portfolio'].map(id => {
+  const panels = new Map(['itdam', 'kkakkung', 'gotya', 'homekeeper', 'axcore'].map(id => {
     const children = new Map(['.detail-slide-image', '.detail-slide-caption', '.slide-counter'].map(s => [s, element()]));
     const panel = { ...element(), dataset: { project: id }, querySelector: s => children.get(s), children };
     selectors.set(`.project-detail-panel[data-project="${id}"]`, panel);
@@ -44,7 +44,7 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
       querySelector: s => selectors.get(s) || (s === '.project-modal' ? modal : element()),
       querySelectorAll: s => s === '.project-detail-panel' ? [...panels.values()] :
         s === 'header, main, .top-button' ? [backgroundHeader, detailHeader] :
-        s === '.site-header, main, .top-button' ? [backgroundHeader] : [],
+        s === '.masthead, .skip-link, main, .top-button' ? [backgroundHeader] : [],
       body: element(), activeElement: element(),
     },
     window: { addEventListener: (type, handler) => windowHandlers.set(type, handler), scrollTo() {} },
@@ -75,8 +75,6 @@ test('slide counter follows next, previous, wraparound, and project reopening', 
   assert.match(panels.get('homekeeper').children.get('.detail-slide-image').src, /homekeeper-data-flow\.svg$/);
   run("openProject('itdam')");
   assert.equal(counter('itdam'), '1 / 6');
-  run("openProject('portfolio')");
-  assert.equal(counter('portfolio'), '1 / 3');
   run("openProject('axcore')");
   assert.equal(counter('axcore'), '1 / 1');
   assert.match(panels.get('axcore').children.get('.detail-slide-image').src, /axcore-ontology-flow\.svg(?:\?[^#]*)?$/);

@@ -7,16 +7,16 @@ const read = (file) => readFile(new URL(`../${file}`, import.meta.url), 'utf8');
 test('portfolio page contains the core recruiting sections', async () => {
   const html = await read('index.html');
 
-  for (const label of ['About Me', 'Skills', 'Archiving', 'Projects', 'Awards', 'Contact']) {
-    assert.match(html, new RegExp(label, 'i'));
+  for (const id of ['about', 'skills', 'projects', 'awards', 'contact']) {
+    assert.ok(html.includes('id="' + id + '"'));
   }
 });
 
 test('portfolio page links public GitHub projects', async () => {
   const html = await read('index.html');
 
-  for (const repo of ['GotYA-portfolio', 'itdam-project', 'kkakkung-project']) {
-    assert.match(html, new RegExp(`https://github.com/JJ-Yurim/${repo}`));
+  for (const repo of ['hiyeonwhy/gotya-culture-curation', 'JJ-Yurim/itdam-project', 'JJ-Yurim/kkakkung-project']) {
+    assert.match(html, new RegExp(`https://github.com/${repo}`));
   }
 });
 
@@ -40,17 +40,35 @@ test('hero has a focused developer portfolio message', async () => {
   const html = await read('index.html');
 
   assert.match(html, /호텔 예약·판매 채널 운영 경험을 바탕으로 데이터와 서비스를 연결하는 백엔드 개발자/);
-  assert.match(html, /호텔 업무를 이해하고, 서비스로 연결합니다/);
-  assert.match(html, /더 알아보기/);
+  const cover = html.match(/<section class="cover"[^>]*>([\s\S]*?)<\/section>/)[1];
+  assert.match(cover, /<h1[^>]*>호텔 운영에서 <em>서비스 개발로\.<\/em><\/h1>/);
+  assert.match(cover, /정유림 <span>백엔드 개발자<\/span>/);
+  assert.doesNotMatch(cover, /<aside|<fieldset|<img/);
+  assert.match(html, /<a href="#projects">프로젝트<\/a>/);
 });
 
-test('project cards expose measurable outcomes before the modal opens', async () => {
+test('selected work is chronological and each project offers independently readable cases', async () => {
   const html = await read('index.html');
-
-  for (const outcome of ['19\\+ 화면', '84% 절감', '60클라이언트', '27 API', '22 테이블']) {
-    assert.match(html, new RegExp(outcome));
+  const cards = [...html.matchAll(/<button class="project-tile"[^>]+data-project="([^"]+)"/g)];
+  assert.deepEqual(cards.map(match => match[1]), ['axcore', 'kkakkung', 'itdam', 'gotya', 'homekeeper']);
+  for (const [, id] of cards) {
+    const card = html.split('class="project-tile" type="button" data-project="' + id + '"')[1].split('</button>')[0];
+    assert.match(card, /<span class="work-outcome">[^?<>]+습니다\.<\/span>/);
   }
-  assert.match(html, /class="tile-outcome"/);
+  for (const [, id] of cards.slice(0, 4)) {
+    const panel = html.split('<article class="project-detail-panel" data-project="' + id + '">')[1].split('</article>')[0];
+    const cases = [...panel.matchAll(/<details class="case-entry"( open)?>/g)];
+    assert.ok(cases.length >= 2, id);
+    assert.equal(cases[0][1], ' open');
+    assert.ok(cases.slice(1).every(entry => !entry[1]));
+    for (const entry of panel.matchAll(/<details class="case-entry"(?: open)?>([\s\S]*?)<\/details>/g)) {
+      assert.match(entry[1], /<details class="case-evidence">\s*<summary>(?:의사코드|테스트 코드|구현 코드) 보기/);
+      assert.match(entry[1], /<figure class="case-code">/);
+      assert.match(entry[1], /<pre[^>]*><code>[^<]+<\/code><\/pre>/);
+      if (id === 'axcore') assert.match(entry[1], /설명용 의사코드/);
+      else assert.match(entry[1], /github\.com\/[^"]+\/blob\/[0-9a-f]{40}\/[^"]+#L\d+-L\d+/);
+    }
+  }
 });
 
 test('project dialog declares modal semantics and accessible slide updates', async () => {
